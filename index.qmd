@@ -1,0 +1,15 @@
+---
+title: "Welcome"
+---
+
+# Welcome to ADALab 👋
+
+We are a research group focused on **Systems Immunology, Proteomics, and Cancer Biology**.  
+
+💡 Explore our lab:
+- 👩‍🔬 [People](people.qmd)
+- 🔬 [Projects](projects.qmd)
+- 📚 [Publications](publications.qmd)
+- 📰 [News](news.qmd)
+- ⚙️ [Tools](tools.qmd)
+- 📬 [Contact](contact.qmd)

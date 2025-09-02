@@ -1,0 +1,14 @@
+- name: Dr. Your Name
+  role: Principal Investigator
+  email: yourname@university.edu
+  photo: /assets/img/Portrait_Placeholder.png
+
+- name: Jane Doe
+  role: Postdoctoral Fellow
+  email: jane@university.edu
+  photo: /assets/img/Portrait_Placeholder.png
+
+- name: John Smith
+  role: Postdoctoral Fellow
+  email: john@university.edu
+  photo: /assets/img/Portrait_Placeholder.png

@@ -1,0 +1,11 @@
+# Lab News
+
+Catch up on recent updates:  
+
+{% for item in site.data.news %}
+---
+
+### {{ item.date }} — {{ item.title }}
+{{ item.content }}
+
+{% endfor %}

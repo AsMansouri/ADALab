@@ -1,0 +1,15 @@
+# Our Team
+
+Meet the ADALab team!  
+
+{% for member in site.data.people %}
+---
+
+![{{ member.name }} photo]({{ member.photo }})  
+
+**{{ member.name }}**  
+*{{ member.role }}*  
+
+📧 [{{ member.email }}](mailto:{{ member.email }})  
+
+{% endfor %}

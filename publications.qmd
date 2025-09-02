@@ -1,0 +1,6 @@
+# Publications
+
+Our latest publications:  
+
+```{bibliography}
+:data: _data/publications.bib

@@ -1,0 +1,11 @@
+# Research Projects
+
+{% for proj in site.data.projects %}
+---
+
+## {{ proj.title }}
+{{ proj.description }}
+
+![Project image]({{ proj.image }})
+
+{% endfor %}
