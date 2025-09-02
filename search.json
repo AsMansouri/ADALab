@@ -39,7 +39,7 @@
     "href": "contact.html",
     "title": "Contact Us",
     "section": "",
-    "text": "Contact Us\n📧 Email: yourname@university.edu\n🏛️ Department of Interdisciplinary Oncology, [LSUHSC]"
+    "text": "Contact Us\nJiri Adamec, PhD\nProfessor\nDirector of Core Laboratories\nStanley S. Scott Cance Center\nDepartment of Interdisciplinary Oncology\n\nCSRB Room #344, New Orleans, LA 70112\nPhone: (504) 568-1610\n📧 Email: jadame@lsuhsc.edu\n🏛️ Department of Interdisciplinary Oncology, [LSUHSC]"
   },
   {
     "objectID": "about.html",
@@ -60,20 +60,13 @@
     "href": "people.html",
     "title": "Our Team",
     "section": "",
-    "text": "Meet the ADALab team!\n\n\n\n\n\n{{ member.name }} photo\n\n\n{{ member.name }}\n{{ member.role }}\n📧 {{ member.email }}\n{% endfor %}"
-  },
-  {
-    "objectID": "people.html#for-member-in-site.data.people",
-    "href": "people.html#for-member-in-site.data.people",
-    "title": "Our Team",
-    "section": "",
-    "text": "{{ member.name }} photo\n\n\n{{ member.name }}\n{{ member.role }}\n📧 {{ member.email }}\n{% endfor %}"
+    "text": "Meet the ADALab Team\n\n{% for member in people %}\n\n&lt;img src=\"{{ member.photo }}\" alt=\"{{ member.name }}\" class=\"person-photo\"&gt;\n&lt;h3&gt;{{ member.name }}&lt;/h3&gt;\n&lt;p&gt;&lt;em&gt;{{ member.role }}&lt;/em&gt;&lt;/p&gt;\n&lt;p&gt;📧 &lt;a href=\"mailto:{{ member.email }}\"&gt;{{ member.email }}&lt;/a&gt;&lt;/p&gt;\n\n{% endfor %}"
   },
   {
     "objectID": "publications.html",
     "href": "publications.html",
     "title": "Publications",
     "section": "",
-    "text": "Publications\nOur latest publications:\n:data: _data/publications.bib"
+    "text": "Publications\nHere are our lab’s publications:"
   }
 ]
