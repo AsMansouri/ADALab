@@ -1,0 +1,22 @@
+.people-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.person-card {
+  width: 200px;
+  text-align: center;
+  padding: 10px;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.person-photo {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 50%; /* makes the photo round */
+  margin-bottom: 10px;
+}

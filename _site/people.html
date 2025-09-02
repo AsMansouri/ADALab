@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>people – Our Research Lab</title>
+<title>Our Team – ADALab</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -70,6 +70,7 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 
 
+<link rel="stylesheet" href="assets/css/custom.css">
 </head>
 
 <body class="nav-fixed fullcontent quarto-light">
@@ -82,7 +83,7 @@ ul.task-list li input[type="checkbox"] {
     <a href="./index.html" class="navbar-brand navbar-brand-logo">
     </a>
     <a class="navbar-brand" href="./index.html">
-    <span class="navbar-title">Our Research Lab</span>
+    <span class="navbar-title">ADALab</span>
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
@@ -136,29 +137,41 @@ ul.task-list li input[type="checkbox"] {
 <!-- margin-sidebar -->
     
 <!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
+<main class="content" id="quarto-document-content">
 
-
-
-
-<section id="our-team" class="level1">
-<h1>Our Team</h1>
-<p>Meet the ADALab team!</p>
-<section id="for-member-in-site.data.people" class="level2">
-<h2 class="anchored" data-anchor-id="for-member-in-site.data.people">{% for member in site.data.people %}</h2>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="{{ member.photo }}" class="img-fluid figure-img"></p>
-<figcaption>{{ member.name }} photo</figcaption>
-</figure>
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Our Team</h1>
 </div>
-<p><strong>{{ member.name }}</strong><br>
-<em>{{ member.role }}</em></p>
-<p>📧 <a href="mailto:%7B%7B%20member.email%20%7D%7D">{{ member.email }}</a></p>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="meet-the-adalab-team" class="level1">
+<h1>Meet the ADALab Team</h1>
+<div class="people-grid">
+{% for member in people %}
+<div class="person-card">
+<pre><code>&lt;img src="{{ member.photo }}" alt="{{ member.name }}" class="person-photo"&gt;
+&lt;h3&gt;{{ member.name }}&lt;/h3&gt;
+&lt;p&gt;&lt;em&gt;{{ member.role }}&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;📧 &lt;a href="mailto:{{ member.email }}"&gt;{{ member.email }}&lt;/a&gt;&lt;/p&gt;</code></pre>
+</div>
 <p>{% endfor %}</p>
+</div>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->
@@ -234,7 +247,7 @@ ul.task-list li input[type="checkbox"] {
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp('/' + window.location.host + '/');
+        var filterRegex = new RegExp("https:\/\/AsMansouri\.github\.io\/ADALab\/");
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }

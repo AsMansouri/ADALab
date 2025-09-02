@@ -1,45 +1,24 @@
 [
   {
-    "objectID": "people.html",
-    "href": "people.html",
-    "title": "Our Team",
-    "section": "",
-    "text": "Meet the ADALab team!\n\n\n\n\n\n{{ member.name }} photo\n\n\n{{ member.name }}\n{{ member.role }}\n📧 {{ member.email }}\n{% endfor %}"
-  },
-  {
-    "objectID": "people.html#for-member-in-site.data.people",
-    "href": "people.html#for-member-in-site.data.people",
-    "title": "Our Team",
-    "section": "",
-    "text": "{{ member.name }} photo\n\n\n{{ member.name }}\n{{ member.role }}\n📧 {{ member.email }}\n{% endfor %}"
-  },
-  {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About ADALab",
-    "section": "",
-    "text": "About ADALab\nWe investigate how viral infections and co-infections shape the immune system and cancer progression.\nPrincipal Investigator: Dr. Jiri Adamec\nInstitution: LSU HEALTH NEW ORLEANS / LSU LCMC Health Cancer Center]\nFunding: ….."
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Welcome",
-    "section": "",
-    "text": "Welcome to ADALab 👋\nWe are a research group focused on Systems Immunology, Proteomics, and Cancer Biology.\n💡 Explore our lab: - 👩‍🔬 People - 🔬 Projects - 📚 Publications - 📰 News - ⚙️ Tools - 📬 Contact"
-  },
-  {
-    "objectID": "contact.html",
-    "href": "contact.html",
-    "title": "Contact Us",
-    "section": "",
-    "text": "Contact Us\n📧 Email: yourname@university.edu\n🏛️ Department of Interdisciplinary Oncology, [Your University]"
-  },
-  {
     "objectID": "tools.html",
     "href": "tools.html",
     "title": "Lab Tools & Resources",
     "section": "",
     "text": "We share pipelines, protocols, and interactive apps here."
+  },
+  {
+    "objectID": "projects.html",
+    "href": "projects.html",
+    "title": "Research Projects",
+    "section": "",
+    "text": "{{ proj.description }}\n\n\n\nProject image\n\n\n{% endfor %}"
+  },
+  {
+    "objectID": "projects.html#proj.title",
+    "href": "projects.html#proj.title",
+    "title": "Research Projects",
+    "section": "",
+    "text": "{{ proj.description }}\n\n\n\nProject image\n\n\n{% endfor %}"
   },
   {
     "objectID": "news.html",
@@ -56,24 +35,38 @@
     "text": "{{ item.content }}\n{% endfor %}"
   },
   {
+    "objectID": "contact.html",
+    "href": "contact.html",
+    "title": "Contact Us",
+    "section": "",
+    "text": "Contact Us\nJiri Adamec, PhD\nProfessor\nDirector of Core Laboratories\nStanley S. Scott Cance Center\nDepartment of Interdisciplinary Oncology\n\nCSRB Room #344, New Orleans, LA 70112\nPhone: (504) 568-1610\n📧 Email: jadame@lsuhsc.edu\n🏛️ Department of Interdisciplinary Oncology, [LSUHSC]"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About ADALab",
+    "section": "",
+    "text": "About ADALab\nWe investigate how viral infections and co-infections shape the immune system and cancer progression.\nPrincipal Investigator: Dr. Jiri Adamec\nInstitution: LSU HEALTH NEW ORLEANS / LSU LCMC Health Cancer Center]\nFunding: ….."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Welcome",
+    "section": "",
+    "text": "Welcome to ADALab 👋\nWe are a research group focused on Systems Immunology, Proteomics, and Cancer Biology.\n💡 Explore our lab: - 👩‍🔬 People - 🔬 Projects - 📚 Publications - 📰 News - ⚙️ Tools - 📬 Contact"
+  },
+  {
+    "objectID": "people.html",
+    "href": "people.html",
+    "title": "Our Team",
+    "section": "",
+    "text": "Meet the ADALab Team\n\n{% for member in people %}\n\n&lt;img src=\"{{ member.photo }}\" alt=\"{{ member.name }}\" class=\"person-photo\"&gt;\n&lt;h3&gt;{{ member.name }}&lt;/h3&gt;\n&lt;p&gt;&lt;em&gt;{{ member.role }}&lt;/em&gt;&lt;/p&gt;\n&lt;p&gt;📧 &lt;a href=\"mailto:{{ member.email }}\"&gt;{{ member.email }}&lt;/a&gt;&lt;/p&gt;\n\n{% endfor %}"
+  },
+  {
     "objectID": "publications.html",
     "href": "publications.html",
     "title": "Publications",
     "section": "",
-    "text": "Publications\nOur latest publications:\n:data: _data/publications.bib"
-  },
-  {
-    "objectID": "projects.html",
-    "href": "projects.html",
-    "title": "Research Projects",
-    "section": "",
-    "text": "{{ proj.description }}\n\n\n\nProject image\n\n\n{% endfor %}"
-  },
-  {
-    "objectID": "projects.html#proj.title",
-    "href": "projects.html#proj.title",
-    "title": "Research Projects",
-    "section": "",
-    "text": "{{ proj.description }}\n\n\n\nProject image\n\n\n{% endfor %}"
+    "text": "Publications\nHere are our lab’s publications:"
   }
 ]

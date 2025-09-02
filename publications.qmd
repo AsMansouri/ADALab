@@ -1,6 +1,10 @@
+---
+title: "Publications"
+---
+
 # Publications
 
-Our latest publications:  
+Here are our lab’s publications:
 
-```{bibliography}
-:data: _data/publications.bib
+::: {#refs}
+:::

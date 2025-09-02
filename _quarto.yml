@@ -1,8 +1,9 @@
 project:
   type: website
+  output-dir: _site
 
 website:
-  title: "Our Research Lab"
+  title: "ADALab"
   navbar:
     left:
       - text: Home
@@ -21,3 +22,14 @@ website:
         href: tools.qmd
       - text: Contact
         href: contact.qmd
+
+data:
+  people: _data/people.yml
+
+format:
+  html:
+    css: assets/css/custom.css
+
+# 🔽 Bibliography settings (top-level, not nested under website)
+bibliography: _data/publications.bib
+csl: assets/css/apa-old-doi-prefix.csl

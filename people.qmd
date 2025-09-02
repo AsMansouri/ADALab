@@ -1,15 +1,18 @@
-# Our Team
-
-Meet the ADALab team!  
-
-{% for member in site.data.people %}
+---
+title: "Our Team"
+format: html
+engine: jinja
 ---
 
-![{{ member.name }} photo]({{ member.photo }})  
+# Meet the ADALab Team
 
-**{{ member.name }}**  
-*{{ member.role }}*  
-
-📧 [{{ member.email }}](mailto:{{ member.email }})  
-
+<div class="people-grid">
+{% for member in people %}
+  <div class="person-card">
+    <img src="{{ member.photo }}" alt="{{ member.name }}" class="person-photo">
+    <h3>{{ member.name }}</h3>
+    <p><em>{{ member.role }}</em></p>
+    <p>📧 <a href="mailto:{{ member.email }}">{{ member.email }}</a></p>
+  </div>
 {% endfor %}
+</div>

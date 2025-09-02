@@ -1,14 +1,39 @@
-- name: Dr. Your Name
+- name: Jiri Adamec, PhD
   role: Principal Investigator
-  email: yourname@university.edu
-  photo: /assets/img/Portrait_Placeholder.png
+  email: jadame@lsuhsc.edu
+  photo: assets/img/Portrait_Placeholder.png
 
-- name: Jane Doe
-  role: Postdoctoral Fellow
-  email: jane@university.edu
-  photo: /assets/img/Portrait_Placeholder.png
+- name: Chatterjee, Sabyasachi
+  role: ASSISTANT PROFESSOR - RESEARCH
+  email: schatt@lsuhsc.edu
+  photo: assets/img/Portrait_Placeholder.png
 
-- name: John Smith
-  role: Postdoctoral Fellow
-  email: john@university.edu
-  photo: /assets/img/Portrait_Placeholder.png
+- name: Klein, Jennifer M.
+  role: CORE LAB MANAGER
+  email: jklei1@lsuhsc.edu
+  photo: assets/img/Portrait_Placeholder.png
+
+- name: Amirsalar Mansouri
+  role: Staff Scientist
+  email: amansouri@lsuhsc.edu
+  photo: assets/img/Portrait_Placeholder.png
+
+- name: Varukattu Babu, Nipun
+  role: RESEARCH FELLOW
+  email: nvaruk@lsuhsc.edu
+  photo: assets/img/Portrait_Placeholder.png
+
+- name: Curole, Brennan J.
+  role: RESEARCH FELLOW 
+  email: bcuro1@lsuhsc.edu
+  photo: assets/img/Portrait_Placeholder.png
+
+- name: Schmitt Gregolin, Cristina
+  role: RESEARCH FELLOW 
+  email: cschm8@lsuhsc.edu
+  photo: assets/img/Portrait_Placeholder.png
+
+- name: Adamcova, Dana
+  role: RESEARCH ASSOCIATE 3
+  email: dadamc@lsuhsc.edu
+  photo: assets/img/Portrait_Placeholder.png
