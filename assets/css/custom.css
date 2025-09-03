@@ -1,7 +1,7 @@
-.people-grid {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
+.people-grid { 
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); 
+  gap: 1.25rem;
 }
 
 .person-card {
@@ -13,10 +13,34 @@
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
-.person-photo {
-  width: 150px;
-  height: 150px;
-  object-fit: cover;
+.person-photo { 
+  width: 120px; 
+  height: 120px; 
+  border-radius: 9999px; 
+  object-fit: cover; 
   border-radius: 50%; /* makes the photo round */
   margin-bottom: 10px;
+  margin: 0 auto 0.75rem; 
+}
+
+
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1.25rem;
+  margin-top: 1rem;
+}
+.project-card {
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 1rem;
+  background: #fff;
+}
+.project-img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: .5rem;
 }

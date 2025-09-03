@@ -7,18 +7,18 @@
     "text": "We share pipelines, protocols, and interactive apps here."
   },
   {
-    "objectID": "projects.html",
-    "href": "projects.html",
-    "title": "Research Projects",
+    "objectID": "publications.html",
+    "href": "publications.html",
+    "title": "Publications",
     "section": "",
-    "text": "{% for proj in site.data.projects %}\n\n\n\n{{ proj.description }}\n\n\n\nProject image\n\n\n{% endfor %}"
+    "text": "Publications\nHere are our lab’s publications:\n\n\nFitzpatrick-Schmidt, T., Mansouri, A., Adamec, J., Klein, J., Coleman, L., Edwards, K. N., … Edwards, S. (2025). Proteomic analysis of chronic binge alcohol-induced hippocampal and anterior cingulate cortex neuroadaptations in simian immunodeficiency virus (SIV)-infected female rhesus macaques. Journal of Neuroimmune Pharmacology, 20(1), 16."
   },
   {
-    "objectID": "projects.html#proj.title",
-    "href": "projects.html#proj.title",
-    "title": "Research Projects",
+    "objectID": "people.html",
+    "href": "people.html",
+    "title": "Our Team",
     "section": "",
-    "text": "{{ proj.description }}\n\n\n\nProject image\n\n\n{% endfor %}"
+    "text": "Principal Investigator\n\n\n\n\n\nTeam"
   },
   {
     "objectID": "index.html",
@@ -28,20 +28,6 @@
     "text": "Welcome to ADALab 👋\nWe are a research group focused on Systems Immunology, Proteomics, and Cancer Biology.\n💡 Explore our lab: - 👩‍🔬 People - 🔬 Projects - 📚 Publications - 📰 News - ⚙️ Tools - 📬 Contact"
   },
   {
-    "objectID": "people.html",
-    "href": "people.html",
-    "title": "Our Team",
-    "section": "",
-    "text": "Meet the ADALab Team\n\n{% for member in people %}\n\n&lt;img src=\"{{ member.photo }}\" alt=\"{{ member.name }}\" class=\"person-photo\"&gt;\n&lt;h3&gt;{{ member.name }}&lt;/h3&gt;\n&lt;p&gt;&lt;em&gt;{{ member.role }}&lt;/em&gt;&lt;/p&gt;\n&lt;p&gt;📧 &lt;a href=\"mailto:{{ member.email }}\"&gt;{{ member.email }}&lt;/a&gt;&lt;/p&gt;\n\n{% endfor %}"
-  },
-  {
-    "objectID": "publications.html",
-    "href": "publications.html",
-    "title": "Publications",
-    "section": "",
-    "text": "Publications\nHere are our lab’s publications:"
-  },
-  {
     "objectID": "about.html",
     "href": "about.html",
     "title": "About ADALab",
@@ -49,17 +35,38 @@
     "text": "About ADALab\nWe investigate how viral infections and co-infections shape the immune system and cancer progression.\nPrincipal Investigator: Dr. Jiri Adamec\nInstitution: LSU HEALTH NEW ORLEANS / LSU LCMC Health Cancer Center]\nFunding: ….."
   },
   {
-    "objectID": "news.html",
-    "href": "news.html",
-    "title": "Lab News",
-    "section": "",
-    "text": "Lab News\nCatch up on recent updates:\n{% for item in site.data.news %}\n\n\n{{ item.date }} — {{ item.title }}\n{{ item.content }}\n{% endfor %}"
-  },
-  {
     "objectID": "contact.html",
     "href": "contact.html",
     "title": "Contact Us",
     "section": "",
     "text": "Contact Us\nJiri Adamec, PhD\nProfessor\nDirector of Core Laboratories\nStanley S. Scott Cance Center\nDepartment of Interdisciplinary Oncology\n\nCSRB Room #344, New Orleans, LA 70112\nPhone: (504) 568-1610\n📧 Email: jadame@lsuhsc.edu\n🏛️ Department of Interdisciplinary Oncology, [LSUHSC]"
+  },
+  {
+    "objectID": "news.html",
+    "href": "news.html",
+    "title": "Lab News",
+    "section": "",
+    "text": "Catch up on recent updates:\n\n\n\n\n{{ item.content }}\n{% endfor %}"
+  },
+  {
+    "objectID": "news.html#for-item-in-site.data.news",
+    "href": "news.html#for-item-in-site.data.news",
+    "title": "Lab News",
+    "section": "",
+    "text": "{{ item.content }}\n{% endfor %}"
+  },
+  {
+    "objectID": "projects.html",
+    "href": "projects.html",
+    "title": "Research Projects",
+    "section": "",
+    "text": "Research Projects"
+  },
+  {
+    "objectID": "test.html",
+    "href": "test.html",
+    "title": "Engine test",
+    "section": "",
+    "text": "2 + 2 = {{ 2 + 2 }}"
   }
 ]
