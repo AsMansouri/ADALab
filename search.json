@@ -7,18 +7,25 @@
     "text": "We share pipelines, protocols, and interactive apps here."
   },
   {
-    "objectID": "publications.html",
-    "href": "publications.html",
-    "title": "Publications",
+    "objectID": "projects.html",
+    "href": "projects.html",
+    "title": "Research Projects",
     "section": "",
-    "text": "Publications\nHere are our lab’s publications:\n\n\nFitzpatrick-Schmidt, T., Mansouri, A., Adamec, J., Klein, J., Coleman, L., Edwards, K. N., … Edwards, S. (2025). Proteomic analysis of chronic binge alcohol-induced hippocampal and anterior cingulate cortex neuroadaptations in simian immunodeficiency virus (SIV)-infected female rhesus macaques. Journal of Neuroimmune Pharmacology, 20(1), 16."
+    "text": "Research Projects"
   },
   {
-    "objectID": "people.html",
-    "href": "people.html",
-    "title": "Our Team",
+    "objectID": "news.html",
+    "href": "news.html",
+    "title": "Lab News",
     "section": "",
-    "text": "Principal Investigator\n\n\n\n\n\nTeam"
+    "text": "Catch up on recent updates:\n\n\n\n\n{{ item.content }}\n{% endfor %}"
+  },
+  {
+    "objectID": "news.html#for-item-in-site.data.news",
+    "href": "news.html#for-item-in-site.data.news",
+    "title": "Lab News",
+    "section": "",
+    "text": "{{ item.content }}\n{% endfor %}"
   },
   {
     "objectID": "index.html",
@@ -42,31 +49,24 @@
     "text": "Contact Us\nJiri Adamec, PhD\nProfessor\nDirector of Core Laboratories\nStanley S. Scott Cance Center\nDepartment of Interdisciplinary Oncology\n\nCSRB Room #344, New Orleans, LA 70112\nPhone: (504) 568-1610\n📧 Email: jadame@lsuhsc.edu\n🏛️ Department of Interdisciplinary Oncology, [LSUHSC]"
   },
   {
-    "objectID": "news.html",
-    "href": "news.html",
-    "title": "Lab News",
+    "objectID": "instruments.html",
+    "href": "instruments.html",
+    "title": "Instruments",
     "section": "",
-    "text": "Catch up on recent updates:\n\n\n\n\n{{ item.content }}\n{% endfor %}"
+    "text": "import yaml, html from IPython.display import HTML, display\n\nLoad YAML\nwith open(“data/instruments.yml”,“r”,encoding=“utf-8”) as f: inst = yaml.safe_load(f) or []\ninst.sort(key=lambda x: (x.get(“category”,““), x.get(”name”,““)))\n\n\nPure HTML only (avoid Markdown headers so blocks don’t split HTML)\ncss = ““”\n\n““”\nhtml_out = [“] cats = [] for item in inst: c = item.get(“category”,““) if c not in cats: cats.append(c)\nfor c in cats: html_out.append(f”\n\n{html.escape(c)}\n\n“) html_out.append(’\n\n’) for it in [x for x in inst if x.get(“category”,““)==c]: name = html.escape(it.get(“name”,““)) vendor = html.escape(it.get(”vendor”,““)) if it.get(”vendor”) else “” summary= html.escape(it.get(“summary”,““)) if it.get(”summary”) else “” img = it.get(“image”) specs = it.get(“specs”) or {} links = it.get(“links”) or [] tags = it.get(“tags”) or []\n    card = ['&lt;div class=\"inst-card\"&gt;']\n    if img: card.append(f\"&lt;img src='{html.escape(img)}' alt='{name}'&gt;\")\n    card.append(f\"&lt;h3&gt;{name}&lt;/h3&gt;\")\n    if vendor:  card.append(f\"&lt;p&gt;&lt;strong&gt;{vendor}&lt;/strong&gt;&lt;/p&gt;\")\n    if summary: card.append(f\"&lt;p&gt;{summary}&lt;/p&gt;\")\n    if specs:\n        card.append(\"&lt;dl class='inst-specs'&gt;\")\n        for k, v in specs.items():\n            card.append(f\"&lt;dt&gt;{html.escape(str(k))}&lt;/dt&gt;&lt;dd&gt;{html.escape(str(v))}&lt;/dd&gt;\")\n        card.append(\"&lt;/dl&gt;\")\n    if links:\n        line = \" · \".join(\n            f\"&lt;a href='{html.escape(l['url'])}' target='_blank' rel='noopener'&gt;{html.escape(l['text'])}&lt;/a&gt;\"\n            for l in links if 'url' in l and 'text' in l\n        )\n        if line: card.append(f\"&lt;p&gt;{line}&lt;/p&gt;\")\n    if tags:\n        card.append(\"&lt;div class='inst-badges'&gt;\" + \"\".join(f\"&lt;span&gt;{html.escape(str(t))}&lt;/span&gt;\" for t in tags) + \"&lt;/div&gt;\")\n    card.append(\"&lt;/div&gt;\")\n    html_out.append(\"\".join(card))\nhtml_out.append(\"&lt;/div&gt;\")  # close grid for this category\ndisplay(HTML(css + ““.join(html_out)))"
   },
   {
-    "objectID": "news.html#for-item-in-site.data.news",
-    "href": "news.html#for-item-in-site.data.news",
-    "title": "Lab News",
+    "objectID": "people.html",
+    "href": "people.html",
+    "title": "Our Team",
     "section": "",
-    "text": "{{ item.content }}\n{% endfor %}"
+    "text": "Principal Investigator\n\n\n\n\n\nTeam"
   },
   {
-    "objectID": "projects.html",
-    "href": "projects.html",
-    "title": "Research Projects",
+    "objectID": "publications.html",
+    "href": "publications.html",
+    "title": "Publications",
     "section": "",
-    "text": "Research Projects"
-  },
-  {
-    "objectID": "test.html",
-    "href": "test.html",
-    "title": "Engine test",
-    "section": "",
-    "text": "2 + 2 = {{ 2 + 2 }}"
+    "text": "Publications\nHere are our lab’s publications:\n\n\nFitzpatrick-Schmidt, T., Mansouri, A., Adamec, J., Klein, J., Coleman, L., Edwards, K. N., … Edwards, S. (2025). Proteomic analysis of chronic binge alcohol-induced hippocampal and anterior cingulate cortex neuroadaptations in simian immunodeficiency virus (SIV)-infected female rhesus macaques. Journal of Neuroimmune Pharmacology, 20(1), 16."
   }
 ]

@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Our Team – ADALab</title>
+<title>Instruments – ADALab</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -98,11 +98,11 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./instruments.html"> 
+    <a class="nav-link active" href="./instruments.html" aria-current="page"> 
 <span class="menu-text">Instruments</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./people.html" aria-current="page"> 
+    <a class="nav-link" href="./people.html"> 
 <span class="menu-text">People</span></a>
   </li>  
   <li class="nav-item">
@@ -133,23 +133,30 @@ ul.task-list li input[type="checkbox"] {
     </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#load-yaml" id="toc-load-yaml" class="nav-link active" data-scroll-target="#load-yaml">Load YAML</a></li>
+  <li><a href="#pure-html-only-avoid-markdown-headers-so-blocks-dont-split-html" id="toc-pure-html-only-avoid-markdown-headers-so-blocks-dont-split-html" class="nav-link" data-scroll-target="#pure-html-only-avoid-markdown-headers-so-blocks-dont-split-html">Pure HTML only (avoid Markdown headers so blocks don’t split HTML)</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content column-page-left" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Our Team</h1>
+<h1 class="title">Instruments</h1>
 </div>
 
 
 
-<div class="quarto-title-meta">
+<div class="quarto-title-meta column-page-left">
 
     
   
@@ -161,56 +168,57 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<h2 class="anchored">
-Principal Investigator
+<p>import yaml, html from IPython.display import HTML, display</p>
+<section id="load-yaml" class="level1">
+<h1>Load YAML</h1>
+<p>with open(“data/instruments.yml”,“r”,encoding=“utf-8”) as f: inst = yaml.safe_load(f) or []</p>
+<p>inst.sort(key=lambda x: (x.get(“category”,““), x.get(”name”,““)))</p>
+</section>
+<section id="pure-html-only-avoid-markdown-headers-so-blocks-dont-split-html" class="level1">
+<h1>Pure HTML only (avoid Markdown headers so blocks don’t split HTML)</h1>
+css = ““”
+<style>
+.inst-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:1.25rem}
+.inst-card{border:1px solid #e5e7eb;border-radius:1rem;padding:1rem;background:#fff;box-shadow:0 1px 2px rgba(0,0,0,.04)}
+.inst-card img{width:100%;height:auto;border-radius:.75rem;margin-bottom:.75rem;object-fit:cover}
+.inst-specs dt{font-weight:600}.inst-specs dd{margin:0 0 .5rem .25rem;color:#374151}
+.inst-badges span{display:inline-block;padding:.15rem .5rem;border-radius:.5rem;background:#f3f4f6;margin-right:.35rem;font-size:.8rem}
+</style>
+<p>““”</p>
+<p>html_out = [“] cats = [] for item in inst: c = item.get(“category”,““) if c not in cats: cats.append(c)</p>
+for c in cats: html_out.append(f”
+<h2 class="anchored" data-anchor-id="pure-html-only-avoid-markdown-headers-so-blocks-dont-split-html">
+{html.escape(c)}
 </h2>
-<div id="pi-card">
+“) html_out.append(’
+<div class="inst-grid">
+<p>’) for it in [x for x in inst if x.get(“category”,““)==c]: name = html.escape(it.get(“name”,““)) vendor = html.escape(it.get(”vendor”,““)) if it.get(”vendor”) else “” summary= html.escape(it.get(“summary”,““)) if it.get(”summary”) else “” img = it.get(“image”) specs = it.get(“specs”) or {} links = it.get(“links”) or [] tags = it.get(“tags”) or []</p>
+<pre><code>    card = ['&lt;div class="inst-card"&gt;']
+    if img: card.append(f"&lt;img src='{html.escape(img)}' alt='{name}'&gt;")
+    card.append(f"&lt;h3&gt;{name}&lt;/h3&gt;")
+    if vendor:  card.append(f"&lt;p&gt;&lt;strong&gt;{vendor}&lt;/strong&gt;&lt;/p&gt;")
+    if summary: card.append(f"&lt;p&gt;{summary}&lt;/p&gt;")
+    if specs:
+        card.append("&lt;dl class='inst-specs'&gt;")
+        for k, v in specs.items():
+            card.append(f"&lt;dt&gt;{html.escape(str(k))}&lt;/dt&gt;&lt;dd&gt;{html.escape(str(v))}&lt;/dd&gt;")
+        card.append("&lt;/dl&gt;")
+    if links:
+        line = " · ".join(
+            f"&lt;a href='{html.escape(l['url'])}' target='_blank' rel='noopener'&gt;{html.escape(l['text'])}&lt;/a&gt;"
+            for l in links if 'url' in l and 'text' in l
+        )
+        if line: card.append(f"&lt;p&gt;{line}&lt;/p&gt;")
+    if tags:
+        card.append("&lt;div class='inst-badges'&gt;" + "".join(f"&lt;span&gt;{html.escape(str(t))}&lt;/span&gt;" for t in tags) + "&lt;/div&gt;")
+    card.append("&lt;/div&gt;")
+    html_out.append("".join(card))
+html_out.append("&lt;/div&gt;")  # close grid for this category</code></pre>
+<p>display(HTML(css + ““.join(html_out)))</p>
+
 
 </div>
-<h2 class="anchored">
-Team
-</h2>
-<div id="people-grid" class="people-grid">
-
-</div>
-<script type="module">
-  import { load } from 'https://cdn.skypack.dev/js-yaml@4.1.0';
-
-  function cardHtml(p, cls = 'person-card') {
-    const photo = p.photo || 'assets/img/placeholder-fallback.png';
-    return `
-      <div class="${cls}">
-        <img src="${photo}" alt="${p.name}" class="person-photo"
-             onerror="this.onerror=null;this.src='assets/img/placeholder-fallback.png';">
-        <div class="person-meta">
-          <h3>${p.name}</h3>
-          <p><em>${p.role}</em></p>
-          <p>📧 <a href="mailto:${p.email}">${p.email}</a></p>
-        </div>
-      </div>
-    `;
-  }
-
-  async function renderPeople() {
-    const res = await fetch('_data/people.yml', { cache: 'no-store' });
-    const data = load(await res.text());
-    const list = data.people || data; // supports either {people:[...]} or just [...]
-
-    if (!Array.isArray(list) || !list.length) return;
-
-    // Prefer the PI by role; otherwise use the first entry
-    let idx = list.findIndex(p => /principal investigator/i.test(p.role || ''));
-    if (idx < 0) idx = 0;
-
-    const [pi] = list.splice(idx, 1);
-    document.getElementById('pi-card').innerHTML = cardHtml(pi, 'person-card person-card--pi');
-    document.getElementById('people-grid').innerHTML = list.map(p => cardHtml(p)).join('');
-  }
-
-  renderPeople();
-</script>
-
-
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
