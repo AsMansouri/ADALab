@@ -44,7 +44,16 @@ execute:
 
 <script>
 (function(){
-  const YAML_PATH = "_data/instruments.yml"; // relative to this page
+  // Turn any path into a correct URL for GitHub Pages
+  function resolvePath(p){
+    if (!p) return "";
+    if (/^(https?:|data:)/i.test(p)) return p; // absolute URLs ok
+    p = String(p).trim().replace(/^\/+/, "");  // strip leading slashes
+    return new URL(p, document.baseURI).toString();
+  }
+
+  const YAML_PATH = resolvePath("_data/instruments.yml");
+  // const YAML_PATH = "_data/instruments.yml"; // relative to this page
   const contentEl = document.getElementById("content");
   const searchEl  = document.getElementById("search");
   const countEl   = document.getElementById("count");
@@ -70,12 +79,11 @@ execute:
     const nm = esc(it.name||"");
     const vd = esc(it.vendor||"");
     const sm = esc(it.summary||"");
-    const imgPath = (it.image ?? "").toString().trim();
-
+    const imgPath = resolvePath(it.image ?? "");
     const im = imgPath
-        ? `<img src="${esc(imgPath)}" alt="${nm}" loading="lazy" decoding="async"
+      ? `<img src="${imgPath}" alt="${nm}" loading="lazy" decoding="async"
             onerror="this.onerror=null; this.remove(); this.closest('.inst-card')?.classList.add('no-img');">`
-        : "";
+      : "";
     const specs = it.specs ? Object.entries(it.specs).map(([k,v]) =>
       `<dt>${esc(k)}</dt><dd>${esc(v)}</dd>`).join("") : "";
     const links = (it.links||[])
