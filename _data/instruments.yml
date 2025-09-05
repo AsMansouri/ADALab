@@ -2,7 +2,7 @@
   name: Agilent 8890 GC + 7250 GC/Q-TOF
   category: Mass Spectrometry
   vendor: Agilent
-  image: /assets/img/instruments/agilent-7250.jpg
+  image: assets/img/instruments/agilent-7250.jpg
   summary: High-accuracy GC/Q-TOF system for untargeted metabolomics and complex mixtures with wide dynamic range and fast acquisition.
   specs:
     Acquisition rate: "1–50 spectra/second"
@@ -19,7 +19,7 @@
   name: Agilent 6495 Triple Quadrupole LC–MS
   category: Mass Spectrometry
   vendor: Agilent
-  image: /assets/img/instruments/agilent-6495.jpg
+  image: assets/img/instruments/agilent-6495.jpg
   summary: High-sensitivity triple quadrupole for targeted quantitation with fast MRM performance.
   specs:
     Mass range: "m/z 5–3000"
@@ -34,7 +34,7 @@
   name: Bruker timsTOF fleX 2 + NanoElute + EvoSep ONE EV1000
   category: Mass Spectrometry
   vendor: Bruker (with Bruker NanoElute and Evosep)
-  image: /assets/img/instruments/timstof-flex2.jpg
+  image: assets/img/instruments/timstof-flex2.jpg
   summary: Dual-source platform switching between ESI and MALDI for 4D-Omics and high-resolution MALDI imaging.
   specs:
     Dual source: "ESI ↔ MALDI"
@@ -50,7 +50,7 @@
   name: Agilent 1290 Infinity II HPLC + 6475 LC/TQ
   category: Mass Spectrometry
   vendor: Agilent
-  image: /assets/img/instruments/agilent-6475.jpg
+  image: assets/img/instruments/agilent-6475.jpg
   summary: Triple quadrupole LC–MS with fast polarity switching and high-speed MRM for targeted assays.
   specs:
     Mass range: "m/z 5–3000"
@@ -66,7 +66,7 @@
   name: Thermo Fisher Orbitrap Fusion Tribrid + Dionex Ultimate 3000 nanoLC
   category: Mass Spectrometry
   vendor: Thermo Fisher Scientific
-  image: /assets/img/instruments/ThermoFisher-Oribitrap-3000.jpg
+  image: assets/img/instruments/ThermoFisher-Oribitrap-3000.jpg
   summary: Tribrid platform combining quadrupole, linear ion trap, and Orbitrap analyzers for deep proteome coverage.
   specs:
     Resolution: "Up to 500,000 FWHM at m/z 200"
@@ -80,7 +80,7 @@
   name: Thermo Fisher Q Exactive Plus + Dionex Ultimate 3000 nanoLC
   category: Mass Spectrometry
   vendor: Thermo Fisher Scientific
-  image: /assets/img/instruments/ThermoFisher-Q-3000.jpg
+  image: assets/img/instruments/ThermoFisher-Q-3000.jpg
   summary: Benchtop Orbitrap for high-resolution accurate-mass LC–MS with fast scanning and wide dynamic range.
   specs:
     Resolving power: "Up to 140,000 at m/z 200 (FWHM)"
@@ -95,7 +95,7 @@
   name: Thermo Proteome Discoverer v2.4
   category: Software
   vendor: Thermo Fisher Scientific
-  image: /assets/img/instruments/proteome-discoverer.jpg
+  image: assets/img/instruments/proteome-discoverer.jpg
   summary: Workflow-based software for qualitative and quantitative analysis of proteomics MS data.
   specs: {}
   links: []
@@ -105,7 +105,7 @@
   name: Dionex Ultimate 3000 Multidimensional LC (UV/Vis)
   category: Liquid Chromatography
   vendor: Thermo Fisher Scientific
-  image: /assets/img/instruments/Dionex-Ultimate-3000.jpg
+  image: assets/img/instruments/Dionex-Ultimate-3000.jpg
   summary: Multidimensional LC system with UV/Vis detection for flexible front-end separations.
   specs: {}
   links: []
@@ -115,7 +115,7 @@
   name: EvoSep ONE EV1000
   category: Liquid Chromatography
   vendor: Evosep
-  image: /assets/img/instruments/evosep-one.jpg
+  image: assets/img/instruments/evosep-one.jpg
   summary: High-throughput LC system optimized for robust, low-carryover proteomics workflows.
   specs: {}
   links: []
@@ -125,7 +125,7 @@
   name: Olink Flex
   category: Targeted Biomarker Analysis
   vendor: Olink
-  image: /assets/img/instruments/olink-flex.jpg
+  image: assets/img/instruments/olink-flex.jpg
   summary: Proximity Extension Assay (PEA)-based targeted protein panels for multiplexed biomarker quantification.
   specs: {}
   links:
@@ -137,7 +137,7 @@
   name: Lunaphore COMET
   category: Multiplex Imaging
   vendor: Lunaphore
-  image: /assets/img/instruments/Lunaphore-Comet.jpg
+  image: assets/img/instruments/Lunaphore-Comet.jpg
   summary: Hyperplex, fully automated tissue imaging platform enabling high-throughput, hands-free workflows.
   specs: {}
   links:
@@ -149,7 +149,7 @@
   name: Biacore 3000 (SPR)
   category: Surface Plasmon Resonance
   vendor: Cytiva (GE Healthcare legacy)
-  image: /assets/img/instruments/BIAcore-3000.jpg
+  image: assets/img/instruments/BIAcore-3000.jpg
   summary: Surface plasmon resonance platform for label-free kinetic and affinity analysis.
   specs:
     Analysis temperature: "4–40 °C"
@@ -164,7 +164,7 @@
   name: NanoDrop ONE
   category: Sample Preparation Equipment
   vendor: Thermo Fisher Scientific
-  image: /assets/img/instruments/nanodrop-one.jpg
+  image: assets/img/instruments/nanodrop-one.jpg
   summary: UV–Vis microvolume spectrophotometer for nucleic acid and protein quantification.
   specs: {}
   links: []
@@ -174,7 +174,7 @@
   name: -20 °C and -80 °C Freezers
   category: Sample Preparation Equipment
   vendor: Various
-  image: /assets/img/instruments/freezers.jpg
+  image: assets/img/instruments/freezers.jpg
   summary: Cold storage for short- and long-term sample preservation.
   specs: {}
   links: []
@@ -184,7 +184,7 @@
   name: SpeedVac Sample Lyophilizers
   category: Sample Preparation Equipment
   vendor: Various
-  image: /assets/img/instruments/speedvac.jpg
+  image: assets/img/instruments/speedvac.jpg
   summary: Vacuum concentrators/lyophilizers for solvent removal and sample drying.
   specs: {}
   links: []
@@ -194,7 +194,7 @@
   name: Centrifuges & Microtube Temperature Blocks
   category: Sample Preparation Equipment
   vendor: Various
-  image: /assets/img/instruments/centrifuge-blocks.jpg
+  image: assets/img/instruments/centrifuge-blocks.jpg
   summary: Benchtop centrifuges and temperature-controlled blocks for sample processing.
   specs: {}
   links: []
@@ -204,7 +204,7 @@
   name: Opentrons Flex Robot
   category: Sample Preparation Equipment
   vendor: Opentrons
-  image: /assets/img/instruments/opentrons-flex.jpg
+  image: assets/img/instruments/opentrons-flex.jpg
   summary: Programmable liquid-handling robot for automated sample prep workflows.
   specs: {}
   links: []
@@ -214,7 +214,7 @@
   name: Labconco FreeZone Triad Freeze Dryer
   category: Sample Preparation Equipment
   vendor: Labconco
-  image: /assets/img/instruments/labconco-freezone-triad.jpg
+  image: assets/img/instruments/labconco-freezone-triad.jpg
   summary: Benchtop freeze dryer supporting manifold, tray drying, and stoppering.
   specs: {}
   links: []
