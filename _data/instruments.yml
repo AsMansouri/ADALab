@@ -1,0 +1,221 @@
+- id: agilent-8890-7250
+  name: Agilent 8890 GC + 7250 GC/Q-TOF
+  category: Mass Spectrometry
+  vendor: Agilent
+  image: /assets/img/instruments/agilent-7250.jpg
+  summary: High-accuracy GC/Q-TOF system for untargeted metabolomics and complex mixtures with wide dynamic range and fast acquisition.
+  specs:
+    Acquisition rate: "1–50 spectra/second"
+    Quadrupole isolation mass range: "m/z 20–1050"
+    TOF mass accuracy: "<2 ppm for 1 pg OFN at m/z 271.9867"
+    TOF mass range: "m/z 20–3000"
+    TOF mass resolution (FWHM): ">25,000 at m/z 271.9867 (independent of acquisition rate)"
+  links:
+    - text: Product page
+      url: https://www.agilent.com/en/product/gas-chromatography-mass-spectrometry-gc-ms/gc-ms-instruments/7250-gc-q-tof
+  tags: [GC–MS, Q-TOF, Metabolomics]
+
+- id: agilent-6495-lcqqq
+  name: Agilent 6495 Triple Quadrupole LC–MS
+  category: Mass Spectrometry
+  vendor: Agilent
+  image: /assets/img/instruments/agilent-6495.jpg
+  summary: High-sensitivity triple quadrupole for targeted quantitation with fast MRM performance.
+  specs:
+    Mass range: "m/z 5–3000"
+    Mass resolution (FWHM): "~0.7 Da"
+    Scan modes: "MS, MS/MS (product ion, neutral loss/gain, precursor ion), SIM, MRM (static, dynamic, triggered)"
+  links:
+    - text: Product page
+      url: https://www.agilent.com/en/product/liquid-chromatography-mass-spectrometry-lc-ms/lc-ms-instruments/triple-quadrupole-lc-ms/6495-triple-quadrupole-lc-ms
+  tags: [LC–MS/MS, QQQ, Targeted]
+
+- id: bruker-timstof-flex2
+  name: Bruker timsTOF fleX 2 + NanoElute + EvoSep ONE EV1000
+  category: Mass Spectrometry
+  vendor: Bruker (with Bruker NanoElute and Evosep)
+  image: /assets/img/instruments/timstof-flex2.jpg
+  summary: Dual-source platform switching between ESI and MALDI for 4D-Omics and high-resolution MALDI imaging.
+  specs:
+    Dual source: "ESI ↔ MALDI"
+    Laser source: "smartbeam 3D laser"
+    Resolution: "Up to 60,000"
+    Mass accuracy: "≤2 ppm RMS (external); ≤800 ppb RMS (internal)"
+    TIMS analyzer: "Ion mobility separation for improved specificity"
+    Spatial resolution: "20 µm standard; Zoom/microGRID down to 10–5 µm"
+  links: []
+  tags: [TIMS, MALDI, Imaging, 4D-Omics]
+
+- id: agilent-1290-6475
+  name: Agilent 1290 Infinity II HPLC + 6475 LC/TQ
+  category: Mass Spectrometry
+  vendor: Agilent
+  image: /assets/img/instruments/agilent-6475.jpg
+  summary: Triple quadrupole LC–MS with fast polarity switching and high-speed MRM for targeted assays.
+  specs:
+    Mass range: "m/z 5–3000"
+    MRM speed: "500 transitions/s"
+    Minimum MRM dwell time: "0.5 ms"
+    Collision cell clearance time: "<1 ms"
+    Polarity switch speed: "<25 ms"
+    Quadrupole resolution (FWHM): "Narrow 0.4 Da; Unit 0.7 Da; Wide 1.2 Da; Widest 2.5 Da"
+  links: []
+  tags: [LC–MS/MS, QQQ, Targeted]
+
+- id: thermo-orbitrap-fusion
+  name: Thermo Fisher Orbitrap Fusion Tribrid + Dionex Ultimate 3000 nanoLC
+  category: Mass Spectrometry
+  vendor: Thermo Fisher Scientific
+  image: /assets/img/instruments/ThermoFisher-Oribitrap-3000.jpg
+  summary: Tribrid platform combining quadrupole, linear ion trap, and Orbitrap analyzers for deep proteome coverage.
+  specs:
+    Resolution: "Up to 500,000 FWHM at m/z 200"
+    Mass range: "Orbitrap up to m/z 6000; linear ion trap up to m/z 4000"
+    Scan rate: "Up to 20 Hz"
+    Mass accuracy: "<3 ppm RMS (external); <1 ppm RMS (internal)"
+  links: []
+  tags: [Orbitrap, Proteomics, DDA, DIA]
+
+- id: thermo-q-exactive-plus
+  name: Thermo Fisher Q Exactive Plus + Dionex Ultimate 3000 nanoLC
+  category: Mass Spectrometry
+  vendor: Thermo Fisher Scientific
+  image: /assets/img/instruments/ThermoFisher-Q-3000.jpg
+  summary: Benchtop Orbitrap for high-resolution accurate-mass LC–MS with fast scanning and wide dynamic range.
+  specs:
+    Resolving power: "Up to 140,000 at m/z 200 (FWHM)"
+    Mass accuracy: "<1 ppm RMS (internal calibration)"
+    Mass range: "m/z 50–6000"
+    Scan speed: "Up to 12 Hz"
+    Dynamic range: ">5,000:1"
+  links: []
+  tags: [Orbitrap, HRAM, Proteomics]
+
+- id: thermo-proteome-discoverer-24
+  name: Thermo Proteome Discoverer v2.4
+  category: Software
+  vendor: Thermo Fisher Scientific
+  image: /assets/img/instruments/proteome-discoverer.jpg
+  summary: Workflow-based software for qualitative and quantitative analysis of proteomics MS data.
+  specs: {}
+  links: []
+  tags: [Software, Proteomics]
+
+- id: dionex-ultimate-3000-mdlc
+  name: Dionex Ultimate 3000 Multidimensional LC (UV/Vis)
+  category: Liquid Chromatography
+  vendor: Thermo Fisher Scientific
+  image: /assets/img/instruments/Dionex-Ultimate-3000.jpg
+  summary: Multidimensional LC system with UV/Vis detection for flexible front-end separations.
+  specs: {}
+  links: []
+  tags: [LC, MD-LC, UV/Vis]
+
+- id: evosep-one-ev1000
+  name: EvoSep ONE EV1000
+  category: Liquid Chromatography
+  vendor: Evosep
+  image: /assets/img/instruments/evosep-one.jpg
+  summary: High-throughput LC system optimized for robust, low-carryover proteomics workflows.
+  specs: {}
+  links: []
+  tags: [LC, Proteomics, High-throughput]
+
+- id: olink-flex
+  name: Olink Flex
+  category: Targeted Biomarker Analysis
+  vendor: Olink
+  image: /assets/img/instruments/olink-flex.jpg
+  summary: Proximity Extension Assay (PEA)-based targeted protein panels for multiplexed biomarker quantification.
+  specs: {}
+  links:
+    - text: Product page
+      url: https://olink.com/products/olink-flex
+  tags: [Proteomics, Biomarkers, PEA]
+
+- id: lunaphore-comet
+  name: Lunaphore COMET
+  category: Multiplex Imaging
+  vendor: Lunaphore
+  image: /assets/img/instruments/Lunaphore-Comet.jpg
+  summary: Hyperplex, fully automated tissue imaging platform enabling high-throughput, hands-free workflows.
+  specs: {}
+  links:
+    - text: Product page
+      url: https://lunaphore.com/products/comet/
+  tags: [Hyperplex, Tissue Imaging, IF]
+
+- id: biacore-3000
+  name: Biacore 3000 (SPR)
+  category: Surface Plasmon Resonance
+  vendor: Cytiva (GE Healthcare legacy)
+  image: /assets/img/instruments/BIAcore-3000.jpg
+  summary: Surface plasmon resonance platform for label-free kinetic and affinity analysis.
+  specs:
+    Analysis temperature: "4–40 °C"
+    Flow rate: "1–100 µL/min"
+    Sample handling: "Up to 192 samples with automated loading/injection"
+    MALDI-MS interface: "Transfer of interaction partners to MALDI targets"
+    Refractive index range: "1.33–1.40"
+  links: []
+  tags: [SPR, Kinetics, Affinity]
+
+- id: nanodrop-one
+  name: NanoDrop ONE
+  category: Sample Preparation Equipment
+  vendor: Thermo Fisher Scientific
+  image: /assets/img/instruments/nanodrop-one.jpg
+  summary: UV–Vis microvolume spectrophotometer for nucleic acid and protein quantification.
+  specs: {}
+  links: []
+  tags: [Quantification, UV–Vis]
+
+- id: cold-storage
+  name: -20 °C and -80 °C Freezers
+  category: Sample Preparation Equipment
+  vendor: Various
+  image: /assets/img/instruments/freezers.jpg
+  summary: Cold storage for short- and long-term sample preservation.
+  specs: {}
+  links: []
+  tags: [Storage, Cryogenic]
+
+- id: speedvac-lyophilizers
+  name: SpeedVac Sample Lyophilizers
+  category: Sample Preparation Equipment
+  vendor: Various
+  image: /assets/img/instruments/speedvac.jpg
+  summary: Vacuum concentrators/lyophilizers for solvent removal and sample drying.
+  specs: {}
+  links: []
+  tags: [Lyophilization, Concentration]
+
+- id: centrifuges-blocks
+  name: Centrifuges & Microtube Temperature Blocks
+  category: Sample Preparation Equipment
+  vendor: Various
+  image: /assets/img/instruments/centrifuge-blocks.jpg
+  summary: Benchtop centrifuges and temperature-controlled blocks for sample processing.
+  specs: {}
+  links: []
+  tags: [Centrifugation, Temperature Control]
+
+- id: opentrons-flex
+  name: Opentrons Flex Robot
+  category: Sample Preparation Equipment
+  vendor: Opentrons
+  image: /assets/img/instruments/opentrons-flex.jpg
+  summary: Programmable liquid-handling robot for automated sample prep workflows.
+  specs: {}
+  links: []
+  tags: [Automation, Robotics]
+
+- id: labconco-freezone-triad
+  name: Labconco FreeZone Triad Freeze Dryer
+  category: Sample Preparation Equipment
+  vendor: Labconco
+  image: /assets/img/instruments/labconco-freezone-triad.jpg
+  summary: Benchtop freeze dryer supporting manifold, tray drying, and stoppering.
+  specs: {}
+  links: []
+  tags: [Freeze Drying, Lyophilization]

@@ -1,18 +1,46 @@
 ---
 title: "Our Team"
 format: html
-engine: jinja
 ---
+<h2>Principal Investigator</h2>
+<div id="pi-card"></div>
 
-# Meet the ADALab Team
+<h2>Team</h2>
+<div id="people-grid" class="people-grid"></div>
 
-<div class="people-grid">
-{% for member in people %}
-  <div class="person-card">
-    <img src="{{ member.photo }}" alt="{{ member.name }}" class="person-photo">
-    <h3>{{ member.name }}</h3>
-    <p><em>{{ member.role }}</em></p>
-    <p>📧 <a href="mailto:{{ member.email }}">{{ member.email }}</a></p>
-  </div>
-{% endfor %}
-</div>
+<script type="module">
+  import { load } from 'https://cdn.skypack.dev/js-yaml@4.1.0';
+
+  function cardHtml(p, cls = 'person-card') {
+    const photo = p.photo || 'assets/img/placeholder-fallback.png';
+    return `
+      <div class="${cls}">
+        <img src="${photo}" alt="${p.name}" class="person-photo"
+             onerror="this.onerror=null;this.src='assets/img/placeholder-fallback.png';">
+        <div class="person-meta">
+          <h3>${p.name}</h3>
+          <p><em>${p.role}</em></p>
+          <p>📧 <a href="mailto:${p.email}">${p.email}</a></p>
+        </div>
+      </div>
+    `;
+  }
+
+  async function renderPeople() {
+    const res = await fetch('_data/people.yml', { cache: 'no-store' });
+    const data = load(await res.text());
+    const list = data.people || data; // supports either {people:[...]} or just [...]
+
+    if (!Array.isArray(list) || !list.length) return;
+
+    // Prefer the PI by role; otherwise use the first entry
+    let idx = list.findIndex(p => /principal investigator/i.test(p.role || ''));
+    if (idx < 0) idx = 0;
+
+    const [pi] = list.splice(idx, 1);
+    document.getElementById('pi-card').innerHTML = cardHtml(pi, 'person-card person-card--pi');
+    document.getElementById('people-grid').innerHTML = list.map(p => cardHtml(p)).join('');
+  }
+
+  renderPeople();
+</script>

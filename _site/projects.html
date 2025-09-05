@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.8.21">
+<meta name="generator" content="quarto-1.7.34">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>projects – ADALab</title>
+<title>Research Projects – ADALab</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -32,15 +32,14 @@ ul.task-list li input[type="checkbox"] {
 <meta name="quarto:offset" content="./">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-ea1d7ac60288e0f1efdbc993fd8432ae.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-c8ad9e5dbd60b7b70b38521ab19b7da4.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-1d4f84655f446305ac42a8f1abcf7405.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dfb324f25d9b1687192fa8be62ac8f9c.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -70,18 +69,16 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 
 
-<link rel="stylesheet" href="assets/css/custom.css">
+<link rel="stylesheet" href="assets/css/style.css">
 </head>
 
-<body class="nav-fixed fullcontent quarto-light">
+<body class="nav-fixed quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a href="./index.html" class="navbar-brand navbar-brand-logo">
-    </a>
     <a class="navbar-brand" href="./index.html">
     <span class="navbar-title">ADALab</span>
     </a>
@@ -99,6 +96,10 @@ ul.task-list li input[type="checkbox"] {
   <li class="nav-item">
     <a class="nav-link" href="./about.html"> 
 <span class="menu-text">About</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./instruments.html"> 
+<span class="menu-text">Instruments</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="./people.html"> 
@@ -135,32 +136,58 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+        
+    </div>
 <!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
+<main class="content" id="quarto-document-content">
 
-
-
-
-<section id="research-projects" class="level1">
-<h1>Research Projects</h1>
-<section id="for-proj-in-site.data.projects" class="level2">
-<h2 class="anchored" data-anchor-id="for-proj-in-site.data.projects">{% for proj in site.data.projects %}</h2>
-</section>
-<section id="proj.title" class="level2">
-<h2 class="anchored" data-anchor-id="proj.title">{{ proj.title }}</h2>
-<p>{{ proj.description }}</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="{{ proj.image }}" class="img-fluid figure-img"></p>
-<figcaption>Project image</figcaption>
-</figure>
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Research Projects</h1>
 </div>
-<p>{% endfor %}</p>
 
 
-</section>
-</section>
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<h2 class="anchored">
+Research Projects
+</h2>
+<div id="projects-grid" class="projects-grid">
+
+</div>
+<script type="module">
+  import { load } from 'https://cdn.skypack.dev/js-yaml@4.1.0';
+
+  async function render() {
+    const r = await fetch('_data/projects.yml', { cache: 'no-store' });
+    if (!r.ok) { document.getElementById('projects-grid').innerHTML = '<p>Could not load projects data.</p>'; return; }
+    const data = load(await r.text());
+    const list = Array.isArray(data) ? data : (data.projects || []);
+    document.getElementById('projects-grid').innerHTML =
+      (list && list.length) ? list.map(p => `
+        <article class="project-card">
+          ${p.image ? `<img class="project-img" src="${p.image}" alt="${p.title}" onerror="this.style.display='none'">` : ''}
+          <h3>${p.title || ''}</h3>
+          ${p.description ? `<p>${p.description}</p>` : ''}
+        </article>
+      `).join('') : '<p>No projects yet.</p>';
+  }
+  render();
+</script>
+
+
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

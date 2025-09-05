@@ -11,14 +11,7 @@
     "href": "projects.html",
     "title": "Research Projects",
     "section": "",
-    "text": "{{ proj.description }}\n\n\n\nProject image\n\n\n{% endfor %}"
-  },
-  {
-    "objectID": "projects.html#proj.title",
-    "href": "projects.html#proj.title",
-    "title": "Research Projects",
-    "section": "",
-    "text": "{{ proj.description }}\n\n\n\nProject image\n\n\n{% endfor %}"
+    "text": "Research Projects"
   },
   {
     "objectID": "news.html",
@@ -35,11 +28,11 @@
     "text": "{{ item.content }}\n{% endfor %}"
   },
   {
-    "objectID": "contact.html",
-    "href": "contact.html",
-    "title": "Contact Us",
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Welcome",
     "section": "",
-    "text": "Contact Us\nJiri Adamec, PhD\nProfessor\nDirector of Core Laboratories\nStanley S. Scott Cance Center\nDepartment of Interdisciplinary Oncology\n\nCSRB Room #344, New Orleans, LA 70112\nPhone: (504) 568-1610\n📧 Email: jadame@lsuhsc.edu\n🏛️ Department of Interdisciplinary Oncology, [LSUHSC]"
+    "text": "Welcome to ADALab 👋\nWe are a research group focused on Systems Immunology, Proteomics, and Cancer Biology.\n💡 Explore our lab: - 👩‍🔬 People - 🔬 Projects - 📚 Publications - 📰 News - ⚙️ Tools - 📬 Contact"
   },
   {
     "objectID": "about.html",
@@ -49,24 +42,31 @@
     "text": "About ADALab\nWe investigate how viral infections and co-infections shape the immune system and cancer progression.\nPrincipal Investigator: Dr. Jiri Adamec\nInstitution: LSU HEALTH NEW ORLEANS / LSU LCMC Health Cancer Center]\nFunding: ….."
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Welcome",
+    "objectID": "contact.html",
+    "href": "contact.html",
+    "title": "Contact Us",
     "section": "",
-    "text": "Welcome to ADALab 👋\nWe are a research group focused on Systems Immunology, Proteomics, and Cancer Biology.\n💡 Explore our lab: - 👩‍🔬 People - 🔬 Projects - 📚 Publications - 📰 News - ⚙️ Tools - 📬 Contact"
+    "text": "Contact Us\nJiri Adamec, PhD\nProfessor\nDirector of Core Laboratories\nStanley S. Scott Cance Center\nDepartment of Interdisciplinary Oncology\n\nCSRB Room #344, New Orleans, LA 70112\nPhone: (504) 568-1610\n📧 Email: jadame@lsuhsc.edu\n🏛️ Department of Interdisciplinary Oncology, [LSUHSC]"
+  },
+  {
+    "objectID": "instruments.html",
+    "href": "instruments.html",
+    "title": "Instruments",
+    "section": "",
+    "text": "Instrumentation\n\n\nThe Proteomics and Metabolomics Core at LSUHSC is well equipped for a variety of experimental samples with instrumentation for liquid and gas chromatography, mass spectrometry, MALDI tissue imaging, Biomarker Analysis, Western Blotting, Multiplex Imaging, and Surface Plasmon Resonance.\n\n\n \n\n\n\n\n\n\nThis page requires JavaScript to load _data/instruments.yml."
   },
   {
     "objectID": "people.html",
     "href": "people.html",
     "title": "Our Team",
     "section": "",
-    "text": "Meet the ADALab Team\n\n{% for member in people %}\n\n&lt;img src=\"{{ member.photo }}\" alt=\"{{ member.name }}\" class=\"person-photo\"&gt;\n&lt;h3&gt;{{ member.name }}&lt;/h3&gt;\n&lt;p&gt;&lt;em&gt;{{ member.role }}&lt;/em&gt;&lt;/p&gt;\n&lt;p&gt;📧 &lt;a href=\"mailto:{{ member.email }}\"&gt;{{ member.email }}&lt;/a&gt;&lt;/p&gt;\n\n{% endfor %}"
+    "text": "Principal Investigator\n\n\n\n\n\nTeam"
   },
   {
     "objectID": "publications.html",
     "href": "publications.html",
     "title": "Publications",
     "section": "",
-    "text": "Publications\nHere are our lab’s publications:"
+    "text": "Publications\nHere are our lab’s publications:\n\n\nFitzpatrick-Schmidt, T., Mansouri, A., Adamec, J., Klein, J., Coleman, L., Edwards, K. N., … Edwards, S. (2025). Proteomic analysis of chronic binge alcohol-induced hippocampal and anterior cingulate cortex neuroadaptations in simian immunodeficiency virus (SIV)-infected female rhesus macaques. Journal of Neuroimmune Pharmacology, 20(1), 16."
   }
 ]

@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.8.21">
+<meta name="generator" content="quarto-1.7.34">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -32,15 +32,14 @@ ul.task-list li input[type="checkbox"] {
 <meta name="quarto:offset" content="./">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-ea1d7ac60288e0f1efdbc993fd8432ae.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-c8ad9e5dbd60b7b70b38521ab19b7da4.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-1d4f84655f446305ac42a8f1abcf7405.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dfb324f25d9b1687192fa8be62ac8f9c.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -70,18 +69,16 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 
 
-<link rel="stylesheet" href="assets/css/custom.css">
+<link rel="stylesheet" href="assets/css/style.css">
 </head>
 
-<body class="nav-fixed fullcontent quarto-light">
+<body class="nav-fixed quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a href="./index.html" class="navbar-brand navbar-brand-logo">
-    </a>
     <a class="navbar-brand" href="./index.html">
     <span class="navbar-title">ADALab</span>
     </a>
@@ -99,6 +96,10 @@ ul.task-list li input[type="checkbox"] {
   <li class="nav-item">
     <a class="nav-link" href="./about.html"> 
 <span class="menu-text">About</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./instruments.html"> 
+<span class="menu-text">Instruments</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link active" href="./people.html" aria-current="page"> 
@@ -135,7 +136,9 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+        
+    </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
@@ -158,21 +161,56 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="meet-the-adalab-team" class="level1">
-<h1>Meet the ADALab Team</h1>
-<div class="people-grid">
-{% for member in people %}
-<div class="person-card">
-<pre><code>&lt;img src="{{ member.photo }}" alt="{{ member.name }}" class="person-photo"&gt;
-&lt;h3&gt;{{ member.name }}&lt;/h3&gt;
-&lt;p&gt;&lt;em&gt;{{ member.role }}&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;📧 &lt;a href="mailto:{{ member.email }}"&gt;{{ member.email }}&lt;/a&gt;&lt;/p&gt;</code></pre>
+<h2 class="anchored">
+Principal Investigator
+</h2>
+<div id="pi-card">
+
 </div>
-<p>{% endfor %}</p>
+<h2 class="anchored">
+Team
+</h2>
+<div id="people-grid" class="people-grid">
+
 </div>
+<script type="module">
+  import { load } from 'https://cdn.skypack.dev/js-yaml@4.1.0';
+
+  function cardHtml(p, cls = 'person-card') {
+    const photo = p.photo || 'assets/img/placeholder-fallback.png';
+    return `
+      <div class="${cls}">
+        <img src="${photo}" alt="${p.name}" class="person-photo"
+             onerror="this.onerror=null;this.src='assets/img/placeholder-fallback.png';">
+        <div class="person-meta">
+          <h3>${p.name}</h3>
+          <p><em>${p.role}</em></p>
+          <p>📧 <a href="mailto:${p.email}">${p.email}</a></p>
+        </div>
+      </div>
+    `;
+  }
+
+  async function renderPeople() {
+    const res = await fetch('_data/people.yml', { cache: 'no-store' });
+    const data = load(await res.text());
+    const list = data.people || data; // supports either {people:[...]} or just [...]
+
+    if (!Array.isArray(list) || !list.length) return;
+
+    // Prefer the PI by role; otherwise use the first entry
+    let idx = list.findIndex(p => /principal investigator/i.test(p.role || ''));
+    if (idx < 0) idx = 0;
+
+    const [pi] = list.splice(idx, 1);
+    document.getElementById('pi-card').innerHTML = cardHtml(pi, 'person-card person-card--pi');
+    document.getElementById('people-grid').innerHTML = list.map(p => cardHtml(p)).join('');
+  }
+
+  renderPeople();
+</script>
 
 
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

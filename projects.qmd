@@ -1,11 +1,28 @@
-# Research Projects
-
-{% for proj in site.data.projects %}
+---
+title: "Research Projects"
+format: html
 ---
 
-## {{ proj.title }}
-{{ proj.description }}
+<h2>Research Projects</h2>
 
-![Project image]({{ proj.image }})
+<div id="projects-grid" class="projects-grid"></div>
 
-{% endfor %}
+<script type="module">
+  import { load } from 'https://cdn.skypack.dev/js-yaml@4.1.0';
+
+  async function render() {
+    const r = await fetch('_data/projects.yml', { cache: 'no-store' });
+    if (!r.ok) { document.getElementById('projects-grid').innerHTML = '<p>Could not load projects data.</p>'; return; }
+    const data = load(await r.text());
+    const list = Array.isArray(data) ? data : (data.projects || []);
+    document.getElementById('projects-grid').innerHTML =
+      (list && list.length) ? list.map(p => `
+        <article class="project-card">
+          ${p.image ? `<img class="project-img" src="${p.image}" alt="${p.title}" onerror="this.style.display='none'">` : ''}
+          <h3>${p.title || ''}</h3>
+          ${p.description ? `<p>${p.description}</p>` : ''}
+        </article>
+      `).join('') : '<p>No projects yet.</p>';
+  }
+  render();
+</script>

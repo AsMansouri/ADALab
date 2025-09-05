@@ -1,7 +1,12 @@
-- title: Project 1
-  description: Using proteomics and antibody repertoire profiling to identify biomarkers of treatment outcomes.
-  image: assets/img/tmp_projects.png
+projects:
+  - title: Spatial multi-omics integration
+    description: Building a scalable pipeline to align MALDI, OME-TIFF and scRNA/ATAC with interactive analysis.
+    image: assets/img/projects/Sample_segmentation.gif
 
-- title: Project 2
-  description: Modeling viral co-infections, immune aging, and cancer risk across cohorts.
-  image: assets/img/tmp_projects.png
+  - title: Project 1
+    description: Using proteomics and antibody repertoire profiling to identify biomarkers of treatment outcomes.
+    image: assets/img/tmp_projects.png
+
+  - title: Project 2
+    description: Modeling viral co-infections, immune aging, and cancer risk across cohorts.
+    image: assets/img/tmp_projects.png

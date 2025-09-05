@@ -1,5 +1,8 @@
 ---
 title: "Publications"
+suppress-bibliography: false  # ← override the global suppression
+nocite: |
+  @*     
 ---
 
 # Publications

@@ -1,6 +1,11 @@
 project:
   type: website
   output-dir: _site
+  resources:
+    - "_data/people.yml"   # <-- make publicly available
+    - "assets/instruments/**" # Instruments images
+    - assets/**            # ensure assets are published
+    - _data/**
 
 website:
   title: "ADALab"
@@ -10,6 +15,8 @@ website:
         href: index.qmd
       - text: About
         href: about.qmd
+      - text: Instruments
+        href: instruments.qmd  
       - text: People
         href: people.qmd
       - text: Projects
@@ -23,13 +30,18 @@ website:
       - text: Contact
         href: contact.qmd
 
-data:
-  people: _data/people.yml
+metadata-files:
+  - _data/people.yml
+  - _data/projects.yml
 
 format:
   html:
-    css: assets/css/custom.css
+    theme: cosmo
+    toc: true
+    css: assets/css/style.css
 
-# 🔽 Bibliography settings (top-level, not nested under website)
+# bibliography config (global, but hidden by default)
 bibliography: _data/publications.bib
 csl: assets/css/apa-old-doi-prefix.csl
+link-citations: true
+suppress-bibliography: true    # ← hide References on all pages by default

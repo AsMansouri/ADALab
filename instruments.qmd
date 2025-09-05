@@ -1,0 +1,161 @@
+---
+title: "Instruments"
+format:
+  html:
+    toc: true
+    page-layout: full
+execute:
+  echo: false
+---
+
+<!-- Styles -->
+<style>
+  .toolbar{display:flex;gap:.75rem;align-items:center;margin:1rem 0}
+  .toolbar input[type="search"]{flex:1;max-width:520px;padding:.6rem .8rem;border:1px solid #e5e7eb;border-radius:.6rem}
+  .inst-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:1.25rem}
+  .inst-card{border:1px solid #e5e7eb;border-radius:1rem;padding:1rem;background:#fff;box-shadow:0 1px 2px rgba(0,0,0,.04)}
+  .inst-card img{width:100%;height:auto;border-radius:.75rem;margin-bottom:.75rem;object-fit:cover}
+  .inst-specs dt{font-weight:600}
+  .inst-specs dd{margin:0 0 .5rem .25rem;color:#374151}
+  .inst-badges span{display:inline-block;padding:.15rem .5rem;border-radius:.5rem;background:#f3f4f6;margin-right:.35rem;font-size:.8rem}
+  h1,h2{scroll-margin-top:90px}
+  .muted{color:#6b7280}
+  .inst-card.no-img { padding-top: 1rem; }
+</style>
+
+<h1>Instrumentation</h1>
+<p class="lead">
+  The Proteomics and Metabolomics Core at LSUHSC is well equipped for a variety of experimental samples with instrumentation for liquid and gas chromatography, mass spectrometry, MALDI tissue imaging, Biomarker Analysis, Western Blotting, Multiplex Imaging, and Surface Plasmon Resonance.
+</p>
+
+<div class="toolbar">
+  <input id="search" type="search" placeholder="Search by name, vendor, category, tags, specs…" aria-label="Search instruments">
+  <span id="count" class="muted"></span>
+</div>
+
+<div id="content" aria-live="polite"></div>
+
+<noscript>
+  <p style="color:#b91c1c"><strong>This page requires JavaScript</strong> to load <code>_data/instruments.yml</code>.</p>
+</noscript>
+
+<!-- js-yaml (browser YAML parser). You can host locally if you prefer. -->
+<script src="https://cdn.jsdelivr.net/npm/js-yaml@4.1.0/dist/js-yaml.min.js"></script>
+
+<script>
+(function(){
+  const YAML_PATH = "_data/instruments.yml"; // relative to this page
+  const contentEl = document.getElementById("content");
+  const searchEl  = document.getElementById("search");
+  const countEl   = document.getElementById("count");
+
+  const esc = s => (s==null ? "" : String(s)
+    .replaceAll("&","&amp;").replaceAll("<","&lt;")
+    .replaceAll(">","&gt;").replaceAll('"',"&quot;").replaceAll("'","&#39;"));
+
+  const slug = s => String(s||"")
+    .toLowerCase().replace(/[^a-z0-9]+/g,"-").replace(/(^-|-$)/g,"");
+
+  const line = arr => arr.filter(Boolean).join(" · ");
+
+  const searchIndex = it => {
+    const specsKV = it.specs ? Object.entries(it.specs).flat().join(" ") : "";
+    const tags    = (it.tags||[]).join(" ");
+    return [
+      it.name, it.vendor, it.category, it.summary, specsKV, tags
+    ].filter(Boolean).join(" ").toLowerCase();
+  };
+
+  function cardHTML(it){
+    const nm = esc(it.name||"");
+    const vd = esc(it.vendor||"");
+    const sm = esc(it.summary||"");
+    const imgPath = (it.image ?? "").toString().trim();
+
+    const im = imgPath
+        ? `<img src="${esc(imgPath)}" alt="${nm}" loading="lazy" decoding="async"
+            onerror="this.onerror=null; this.remove(); this.closest('.inst-card')?.classList.add('no-img');">`
+        : "";
+    const specs = it.specs ? Object.entries(it.specs).map(([k,v]) =>
+      `<dt>${esc(k)}</dt><dd>${esc(v)}</dd>`).join("") : "";
+    const links = (it.links||[])
+      .filter(l => l && l.url && l.text)
+      .map(l => `<a href="${esc(l.url)}" target="_blank" rel="noopener">${esc(l.text)}</a>`);
+    const tags  = (it.tags||[]).map(t => `<span>${esc(t)}</span>`).join("");
+    const id    = esc(it.id || slug(it.name));
+
+    return `
+      <div class="inst-card" id="${id}"
+           data-search="${esc(searchIndex(it))}">
+        ${im}
+        <h3>${nm}</h3>
+        ${vd ? `<p><strong>${vd}</strong></p>` : ""}
+        ${sm ? `<p>${sm}</p>` : ""}
+        ${specs ? `<dl class="inst-specs">${specs}</dl>` : ""}
+        ${links.length ? `<p>${line(links)}</p>` : ""}
+        ${tags ? `<div class="inst-badges">${tags}</div>` : ""}
+      </div>`;
+  }
+
+  function render(data){
+    // Sort by category then name
+    data.sort((a,b)=>{
+      const ka = (a.category||"").localeCompare(b.category||"");
+      return ka || (a.name||"").localeCompare(b.name||"");
+    });
+
+    // Build per-category sections
+    const cats = [...new Set(data.map(x => x.category||"Other"))];
+    const parts = [];
+    for(const c of cats){
+      parts.push(`<h2>${esc(c)}</h2>`);
+      parts.push(`<div class="inst-grid">`);
+      for(const it of data.filter(x => (x.category||"Other")===c)){
+        parts.push(cardHTML(it));
+      }
+      parts.push(`</div>`);
+    }
+    contentEl.innerHTML = parts.join("");
+
+    // Update count
+    updateCount();
+  }
+
+  function updateCount(){
+    const visible = [...document.querySelectorAll(".inst-card")]
+      .filter(el => el.style.display !== "none").length;
+    const total = document.querySelectorAll(".inst-card").length;
+    countEl.textContent = total ? `${visible}/${total} shown` : "";
+  }
+
+  function applyFilter(q){
+    const ql = q.trim().toLowerCase();
+    const cards = document.querySelectorAll(".inst-card");
+    if(!ql){
+      cards.forEach(el => el.style.display = "");
+    }else{
+      cards.forEach(el => {
+        const hay = el.dataset.search || "";
+        el.style.display = hay.includes(ql) ? "" : "none";
+      });
+    }
+    updateCount();
+  }
+
+  // Load YAML and render
+  fetch(YAML_PATH)
+    .then(r => r.ok ? r.text() : Promise.reject(r.status))
+    .then(txt => jsyaml.load(txt) || [])
+    .then(data => Array.isArray(data) ? data : [])
+    .then(render)
+    .catch(err => {
+      contentEl.innerHTML =
+        `<p style="color:#b91c1c"><strong>Could not load</strong> ${esc(YAML_PATH)}. ` +
+        `Check the path and that it’s published with your site.</p>`;
+      console.error("YAML load error:", err);
+    });
+
+  // Search handler
+  searchEl.addEventListener("input", e => applyFilter(e.target.value));
+})();
+</script>
