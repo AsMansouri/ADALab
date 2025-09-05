@@ -196,7 +196,16 @@ The Proteomics and Metabolomics Core at LSUHSC is well equipped for a variety of
 <script src="https://cdn.jsdelivr.net/npm/js-yaml@4.1.0/dist/js-yaml.min.js"></script>
 <script>
 (function(){
-  const YAML_PATH = "_data/instruments.yml"; // relative to this page
+  // Turn any path into a correct URL for GitHub Pages
+  function resolvePath(p){
+    if (!p) return "";
+    if (/^(https?:|data:)/i.test(p)) return p; // absolute URLs ok
+    p = String(p).trim().replace(/^\/+/, "");  // strip leading slashes
+    return new URL(p, document.baseURI).toString();
+  }
+
+  const YAML_PATH = resolvePath("_data/instruments.yml");
+  // const YAML_PATH = "_data/instruments.yml"; // relative to this page
   const contentEl = document.getElementById("content");
   const searchEl  = document.getElementById("search");
   const countEl   = document.getElementById("count");
