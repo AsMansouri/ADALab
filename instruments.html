@@ -317,6 +317,12 @@ The Proteomics and Metabolomics Core at LSUHSC is well equipped for a variety of
 
   // Search handler
   searchEl.addEventListener("input", e => applyFilter(e.target.value));
+  
+  window.addEventListener('load', () => {
+    document.querySelectorAll('.inst-card img').forEach(img => {
+      console.log('IMG src →', img.src);
+    });
+  });
 })();
 </script>
 
