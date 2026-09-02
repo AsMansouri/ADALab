@@ -192,7 +192,16 @@ div.csl-indent {
 <p>Here are our lab’s publications:</p>
 <div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" data-line-spacing="2" role="list">
 <div id="ref-fitzpatrick2025proteomic" class="csl-entry" role="listitem">
-Fitzpatrick-Schmidt, T., Mansouri, A., Adamec, J., Klein, J., Coleman, L., Edwards, K. N., … Edwards, S. (2025). Proteomic analysis of chronic binge alcohol-induced hippocampal and anterior cingulate cortex neuroadaptations in simian immunodeficiency virus (SIV)-infected female rhesus macaques. <em>Journal of Neuroimmune Pharmacology</em>, <em>20</em>(1), 16.
+Fitzpatrick-Schmidt, T., Mansouri, A., Adamec, J., Klein, J., Coleman, L., Edwards, K. N., … Edwards, S. (2025). Proteomic analysis of chronic binge alcohol-induced hippocampal and anterior cingulate cortex neuroadaptations in simian immunodeficiency virus (SIV)-infected female rhesus macaques. <em>Journal of Neuroimmune Pharmacology</em>, <em>20</em>(1), 16. doi: <a href="https://doi.org/10.1007/s11481-025-10185-9">10.1007/s11481-025-10185-9</a>
+</div>
+<div id="ref-harris2026concurrent" class="csl-entry" role="listitem">
+Harris, N. R., Gallegos, E. M., Donovan, M., Mansouri, A., Paloczi, J., &amp; Gardner, J. D. (2026). Concurrent chronic-plus-binge alcohol consumption and nicotine vaping alter the cardiac ventricular proteome in a preclinical mouse model. <em>International Journal of Molecular Sciences</em>, <em>27</em>(4), 1625.
+</div>
+<div id="ref-mansouri2026comparative" class="csl-entry" role="listitem">
+Mansouri, A., Hart, O., Aslanabadi, S., Hartupee, C., Yalcin, D., Sinha, G., et al.others. (2026). Comparative proteomic profiling of responses to standard systemic treatment regimens in pancreatic cancer. <em>Cells</em>, <em>15</em>(6), 531.
+</div>
+<div id="ref-MANSOURI2026344925" class="csl-entry" role="listitem">
+Mansouri, A., Varukattu, N. B., Curole, B. J., Moaven, O., &amp; Adamec, J. (2026). Mass spectrometry imaging tutorial: From cancer biomarker discovery to clinical applications. <em>Analytica Chimica Acta</em>, <em>1387</em>, 344925. doi: <a href="https://doi.org/10.1016/j.aca.2025.344925">https://doi.org/10.1016/j.aca.2025.344925</a>
 </div>
 </div>
 
@@ -272,7 +281,7 @@ Fitzpatrick-Schmidt, T., Mansouri, A., Adamec, J., Klein, J., Coleman, L., Edwar
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp("https:\/\/AsMansouri\.github\.io\/ADALab\/");
+        var filterRegex = new RegExp('/' + window.location.host + '/');
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }

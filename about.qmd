@@ -1,7 +1,9 @@
 # About ADALab
 
-We investigate how viral infections and co-infections shape the immune system and cancer progression.  
+<div class="content-panel">
+  <p>We investigate how viral infections and co-infections shape the immune system and cancer progression.</p>
 
-**Principal Investigator:** Dr. Jiri Adamec  
-**Institution:** LSU HEALTH NEW ORLEANS / LSU LCMC Health Cancer Center]  
-**Funding:** .....  
+  <p><strong>Principal Investigator:</strong> Dr. Jiri Adamec</p>
+  <p><strong>Institution:</strong> LSU HEALTH NEW ORLEANS / LSU LCMC Health Cancer Center</p>
+  <p><strong>Funding:</strong> .....</p>
+</div>

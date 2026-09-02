@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>tools – ADALab</title>
+<title>Lab Tools &amp; Resources – ADALab</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -141,29 +141,72 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#lab-tools-resources" id="toc-lab-tools-resources" class="nav-link active" data-scroll-target="#lab-tools-resources">Lab Tools &amp; Resources</a>
-  <ul class="collapse">
-  <li><a href="#example-shiny-app" id="toc-example-shiny-app" class="nav-link" data-scroll-target="#example-shiny-app">Example Shiny App</a></li>
-  </ul></li>
+  <li><a href="#lab-tools-resources" id="toc-lab-tools-resources" class="nav-link active" data-scroll-target="#lab-tools-resources">Lab Tools &amp; Resources</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Lab Tools &amp; Resources</h1>
+</div>
 
 
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
 
 
 <section id="lab-tools-resources" class="level1">
 <h1>Lab Tools &amp; Resources</h1>
-<p>We share pipelines, protocols, and interactive apps here.</p>
-<section id="example-shiny-app" class="level2">
-<h2 class="anchored" data-anchor-id="example-shiny-app">Example Shiny App</h2>
-<iframe src="https://shinyapps.io/yourapp" width="100%" height="600">
-</iframe>
+<div class="content-panel">
+<p>
+We share pipelines, protocols, and interactive apps here.
+</p>
+</div>
+<div id="tools-grid" class="tools-grid">
+
+</div>
+<script type="module">
+  import { load } from 'https://cdn.skypack.dev/js-yaml@4.1.0';
+
+  async function renderTools() {
+    const res = await fetch('_data/tools.yml', { cache: 'no-store' });
+    const data = load(await res.text());
+    const list = Array.isArray(data) ? data : (data.tools || []);
+    const container = document.getElementById('tools-grid');
+
+    if (!Array.isArray(list) || !list.length) {
+      container.innerHTML = '<p>No tools yet.</p>';
+      return;
+    }
+
+    container.innerHTML = list.map(tool => `
+      <article class="tool-card">
+        <div class="tool-card__header">
+          <h3>${tool.name || ''}</h3>
+          ${tool.category ? `<span class="pill">${tool.category}</span>` : ''}
+        </div>
+        <p>${tool.description || ''}</p>
+        ${tool.link ? `<p><a href="${tool.link}" target="_blank" rel="noopener">Learn more</a></p>` : ''}
+      </article>
+    `).join('');
+  }
+
+  renderTools();
+</script>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->
@@ -239,7 +282,7 @@ ul.task-list li input[type="checkbox"] {
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp("https:\/\/AsMansouri\.github\.io\/ADALab\/");
+        var filterRegex = new RegExp('/' + window.location.host + '/');
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }

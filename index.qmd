@@ -1,15 +1,52 @@
 ---
-title: "Welcome"
+title: "ADALab"
 ---
 
-# Welcome to ADALab 👋
+<section class="lab-hero">
+  <div class="lab-hero__content">
+    <p class="eyebrow">Proteomics • Metabolomics • Systems Biology</p>
+    <h1>ADALab</h1>
+    <p class="lead">We are a research group focused on <strong>Systems Immunology, Proteomics, and Cancer Biology</strong>, with a strong emphasis on mechanistic discovery, biomarker development, and translational core services.</p>
 
-We are a research group focused on **Systems Immunology, Proteomics, and Cancer Biology**.  
+    <div class="hero-actions">
+      <a href="projects.qmd" class="primary-link">Explore projects</a>
+      <a href="instruments.qmd" class="secondary-link">Core instruments</a>
+    </div>
+  </div>
 
-💡 Explore our lab:
-- 👩‍🔬 [People](people.qmd)
-- 🔬 [Projects](projects.qmd)
-- 📚 [Publications](publications.qmd)
-- 📰 [News](news.qmd)
-- ⚙️ [Tools](tools.qmd)
-- 📬 [Contact](contact.qmd)
+  <div class="hero-panel">
+    <h3>Core capabilities</h3>
+    <ul>
+      <li>LC-MS/MS and GC-MS workflows</li>
+      <li>MALDI imaging and spatial omics</li>
+      <li>Multiplex biomarker analysis</li>
+      <li>Proteomics and metabolomics data integration</li>
+    </ul>
+  </div>
+</section>
+
+<section class="info-grid">
+  <article class="info-card">
+    <h3>Research focus</h3>
+    <p>We investigate how viral infection, immune regulation, and cancer biology intersect across molecular, cellular, and systems levels.</p>
+  </article>
+
+  <article class="info-card">
+    <h3>Core services</h3>
+    <p>Our work supports discovery and validation pipelines for biomarker identification, tissue imaging, and high-throughput omics analysis.</p>
+  </article>
+
+  <article class="info-card">
+    <h3>Collaboration</h3>
+    <p>We partner with investigators across oncology, immunology, and translational science to accelerate discovery and application.</p>
+  </article>
+</section>
+
+<div class="quick-links">
+  <a href="people.qmd" class="quick-link">People</a>
+  <a href="projects.qmd" class="quick-link">Projects</a>
+  <a href="publications.qmd" class="quick-link">Publications</a>
+  <a href="news.qmd" class="quick-link">News</a>
+  <a href="tools.qmd" class="quick-link">Tools</a>
+  <a href="contact.qmd" class="quick-link">Contact</a>
+</div>

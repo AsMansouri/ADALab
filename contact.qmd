@@ -1,14 +1,17 @@
 # Contact Us
 
-    Jiri Adamec, PhD
-    Professor
-    Director of Core Laboratories
-    Stanley S. Scott Cance Center
-    Department of Interdisciplinary Oncology
+<div class="content-panel contact-card">
+  <p>Jiri Adamec, PhD<br>
+  Professor<br>
+  Director of Core Laboratories<br>
+  Stanley S. Scott Cance Center<br>
+  Department of Interdisciplinary Oncology</p>
 
-    CSRB Room #344, New Orleans, LA 70112
-    Phone: (504) 568-1610
-📧 Email: jadame@lsuhsc.edu  
-🏛️ Department of Interdisciplinary Oncology, [LSUHSC]  
+  <p>CSRB Room #344, New Orleans, LA 70112<br>
+  Phone: (504) 568-1610</p>
 
-<iframe src="https://www.google.com/maps/embed?pb=!1m18!..." width="600" height="400"></iframe>
+  <p>📧 Email: jadame@lsuhsc.edu<br>
+  🏛️ Department of Interdisciplinary Oncology, [LSUHSC]</p>
+</div>
+
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!..." width="100%" height="400" style="border:0; border-radius: 12px; margin-top: 1.5rem;" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade"></iframe>

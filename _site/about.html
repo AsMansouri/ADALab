@@ -153,10 +153,20 @@ ul.task-list li input[type="checkbox"] {
 
 <section id="about-adalab" class="level1">
 <h1>About ADALab</h1>
-<p>We investigate how viral infections and co-infections shape the immune system and cancer progression.</p>
-<p><strong>Principal Investigator:</strong> Dr.&nbsp;Jiri Adamec<br>
-<strong>Institution:</strong> LSU HEALTH NEW ORLEANS / LSU LCMC Health Cancer Center]<br>
-<strong>Funding:</strong> …..</p>
+<div class="content-panel">
+<p>
+We investigate how viral infections and co-infections shape the immune system and cancer progression.
+</p>
+<p>
+<strong>Principal Investigator:</strong> Dr.&nbsp;Jiri Adamec
+</p>
+<p>
+<strong>Institution:</strong> LSU HEALTH NEW ORLEANS / LSU LCMC Health Cancer Center
+</p>
+<p>
+<strong>Funding:</strong> …..
+</p>
+</div>
 
 
 </section>
@@ -234,7 +244,7 @@ ul.task-list li input[type="checkbox"] {
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp("https:\/\/AsMansouri\.github\.io\/ADALab\/");
+        var filterRegex = new RegExp('/' + window.location.host + '/');
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }

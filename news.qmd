@@ -1,11 +1,38 @@
-# Lab News
-
-Catch up on recent updates:  
-
-{% for item in site.data.news %}
+---
+title: "Lab News"
+format: html
 ---
 
-### {{ item.date }} — {{ item.title }}
-{{ item.content }}
+# Lab News
 
-{% endfor %}
+<div class="content-panel">
+  <p>Catch up on recent updates:</p>
+</div>
+
+<div id="news-list" class="news-list"></div>
+
+<script type="module">
+  import { load } from 'https://cdn.skypack.dev/js-yaml@4.1.0';
+
+  async function renderNews() {
+    const res = await fetch('_data/news.yml', { cache: 'no-store' });
+    const data = load(await res.text());
+    const list = Array.isArray(data) ? data : (data.news || []);
+    const container = document.getElementById('news-list');
+
+    if (!Array.isArray(list) || !list.length) {
+      container.innerHTML = '<p>No news yet.</p>';
+      return;
+    }
+
+    container.innerHTML = list.map(item => `
+      <article class="news-item">
+        <div class="news-item__meta">${item.date || ''}</div>
+        <h3>${item.title || ''}</h3>
+        <p>${item.content || ''}</p>
+      </article>
+    `).join('');
+  }
+
+  renderNews();
+</script>
