@@ -1,0 +1,15 @@
+tools:
+  - name: Example Shiny App
+    category: Analysis
+    description: Interactive analysis interface for exploring lab datasets and results.
+    link: https://shinyapps.io/yourapp
+
+  - name: Proteomics Pipeline
+    category: Workflow
+    description: Standardized processing workflow for mass spectrometry and biomarker analyses.
+    link: https://example.com
+
+  - name: Data Repository
+    category: Resources
+    description: Shared repository for protocols, processed outputs, and reusable analysis scripts.
+    link: https://example.com

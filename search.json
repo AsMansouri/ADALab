@@ -1,10 +1,31 @@
 [
   {
-    "objectID": "tools.html",
-    "href": "tools.html",
-    "title": "Lab Tools & Resources",
+    "objectID": "people.html",
+    "href": "people.html",
+    "title": "Our Team",
     "section": "",
-    "text": "We share pipelines, protocols, and interactive apps here."
+    "text": "Principal Investigator\n\n\n\n\n\nTeam"
+  },
+  {
+    "objectID": "news.html",
+    "href": "news.html",
+    "title": "Lab News",
+    "section": "",
+    "text": "Lab News\n\n\nCatch up on recent updates:"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "ADALab",
+    "section": "",
+    "text": "&lt;p class=\"eyebrow\"&gt;Proteomics • Metabolomics • Systems Biology&lt;/p&gt;\n&lt;h1&gt;ADALab&lt;/h1&gt;\n&lt;p class=\"lead\"&gt;We are a research group focused on &lt;strong&gt;Systems Immunology, Proteomics, and Cancer Biology&lt;/strong&gt;, with a strong emphasis on mechanistic discovery, biomarker development, and translational core services.&lt;/p&gt;\n\n&lt;div class=\"hero-actions\"&gt;\n  &lt;a href=\"projects.qmd\" class=\"primary-link\"&gt;Explore projects&lt;/a&gt;\n  &lt;a href=\"instruments.qmd\" class=\"secondary-link\"&gt;Core instruments&lt;/a&gt;\n&lt;/div&gt;\n\n\n&lt;h3&gt;Core capabilities&lt;/h3&gt;\n&lt;ul&gt;\n  &lt;li&gt;LC-MS/MS and GC-MS workflows&lt;/li&gt;\n  &lt;li&gt;MALDI imaging and spatial omics&lt;/li&gt;\n  &lt;li&gt;Multiplex biomarker analysis&lt;/li&gt;\n  &lt;li&gt;Proteomics and metabolomics data integration&lt;/li&gt;\n&lt;/ul&gt;\n\n\n\n\n\nResearch focus\n\n\nWe investigate how viral infection, immune regulation, and cancer biology intersect across molecular, cellular, and systems levels.\n\n\n\n\nCore services\n\n\nOur work supports discovery and validation pipelines for biomarker identification, tissue imaging, and high-throughput omics analysis.\n\n\n\n\nCollaboration\n\n\nWe partner with investigators across oncology, immunology, and translational science to accelerate discovery and application.\n\n\n\n\nPeople Projects Publications News Tools Contact"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About ADALab",
+    "section": "",
+    "text": "About ADALab\n\n\nWe investigate how viral infections and co-infections shape the immune system and cancer progression.\n\n\nPrincipal Investigator: Dr. Jiri Adamec\n\n\nInstitution: LSU HEALTH NEW ORLEANS / LSU LCMC Health Cancer Center\n\n\nFunding: ….."
   },
   {
     "objectID": "projects.html",
@@ -14,39 +35,18 @@
     "text": "Research Projects"
   },
   {
-    "objectID": "news.html",
-    "href": "news.html",
-    "title": "Lab News",
+    "objectID": "tools.html",
+    "href": "tools.html",
+    "title": "Lab Tools & Resources",
     "section": "",
-    "text": "Catch up on recent updates:\n\n\n\n\n{{ item.content }}\n{% endfor %}"
-  },
-  {
-    "objectID": "news.html#for-item-in-site.data.news",
-    "href": "news.html#for-item-in-site.data.news",
-    "title": "Lab News",
-    "section": "",
-    "text": "{{ item.content }}\n{% endfor %}"
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Welcome",
-    "section": "",
-    "text": "Welcome to ADALab 👋\nWe are a research group focused on Systems Immunology, Proteomics, and Cancer Biology.\n💡 Explore our lab: - 👩‍🔬 People - 🔬 Projects - 📚 Publications - 📰 News - ⚙️ Tools - 📬 Contact"
-  },
-  {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About ADALab",
-    "section": "",
-    "text": "About ADALab\nOur research focuses on taking integrated proteomics, metabolomics, and analytical approaches to identify molecular mechanisms of disease, its biomarkers and develop technologies for their detection and accurate quantification. Centering on our expertise and interests in redox biology/energy metabolism, our effort is distributed among three areas including my own research (30% effort), translational research (30% effort) and collaborative projects (40% effort).\nA major component of these activities is the identification of oxidative stress biomarkers and their use in elucidating cellular and organ response mechanisms. Particularly interest is in irreversible modifications of proteins and metabolites and their potential interference with cellular processes. These activities include both development of new analytical methods and their application on the specific aging related disease such as cancer, neurodegeneration, and autoimmune disorders.\nIn technology development, our focus is primarily on platform development for 1/ precise quantification of change in metabolite or protein concentrations, and 2/ molecular tissue imaging. This are key elements of Systems Biology and hold significant promise to identify important relationships between metabolites, proteins, and genes. Traditional ways to quantify metabolites include gas or liquid chromatography coupled with mass spectrometry. Due to ion suppression these methods have significant problems with the precision of quantification. To improve precision, we have e.g., introduced a new post-biosynthetic stable isotope encoding concept called Group Specific Internal Standard Technology (GSIST). GSIST can be used for both relative and absolute quantification as well as for discovery of new metabolites. Metabolites from control samples (relative quantification) or metabolite standards (absolute quantification) and experimental samples are derivatized with two different labeling agents that are chemically identical but isotopically distinct. After mixing these derivatized metabolites, each molecule from the control or standard sample serves as the internal standard for determining the concentration of the chemically identical component in the experimental sample. Currently, we are developing tagging system for simultaneous targeted analysis of hundreds on molecules in tissue. We have a complementary set of “cutting-edge” mass spectrometry-based instrumentation including Bruker’s TimsTof Felx 2, Agilent’s LC-QQQ-MS and GC-TOF-MS and various LC-Orbi-MS.\nIn translational research, we have recently introduced a Noviplex plasma separation device (which is commercially available through Shimadzu). Noviplex is a self-contained, blood-plasma sampling device used to volumetrically collect a plasma aliquot independent of whole blood application volume. Noviplex requires no power and circumvents requirements for venipuncture-phlebotomy training, needles, special vials and equipment, refrigeration, and centrifugation normally associated with traditional plasma methods. Plasma extraction occurs in three minutes after which an absorbent disc at the bottom saturates with a fixed volume of plasma through a capillary action. The air-dried plasma aliquot can be inexpensively transported with minimal biohazard to a centralized laboratory for quantitation of biomarkers for disease or physiological function. As a part of the research, we e.g., participate in several projects in Brazil involving collaboration between academic institutions, health care providers and the Brazilian government to map the impact of mercury on the Amazonian River environment and its toxicity to Amazonians.\nPrincipal Investigator: Dr. Jiri Adamec\nInstitution: LSU HEALTH NEW ORLEANS / LSU LCMC Health Cancer Center]\nFunding: ….."
+    "text": "Lab Tools & Resources\n\n\nWe share pipelines, protocols, and interactive apps here."
   },
   {
     "objectID": "contact.html",
     "href": "contact.html",
     "title": "Contact Us",
     "section": "",
-    "text": "Contact Us\nJiri Adamec, PhD\nProfessor\nDirector of Core Laboratories\nStanley S. Scott Cance Center\nDepartment of Interdisciplinary Oncology\n\nCSRB Room #344, New Orleans, LA 70112\nPhone: (504) 568-1610\n📧 Email: jadame@lsuhsc.edu\n🏛️ Department of Interdisciplinary Oncology, [LSUHSC]"
+    "text": "Contact Us\n\n\nJiri Adamec, PhD Professor Director of Core Laboratories Stanley S. Scott Cance Center Department of Interdisciplinary Oncology\n\n\nCSRB Room #344, New Orleans, LA 70112 Phone: (504) 568-1610\n\n\n📧 Email: jadame@lsuhsc.edu 🏛️ Department of Interdisciplinary Oncology, [LSUHSC]"
   },
   {
     "objectID": "instruments.html",
@@ -56,17 +56,10 @@
     "text": "Instrumentation\n\n\nThe Proteomics and Metabolomics Core at LSUHSC is well equipped for a variety of experimental samples with instrumentation for liquid and gas chromatography, mass spectrometry, MALDI tissue imaging, Biomarker Analysis, Western Blotting, Multiplex Imaging, and Surface Plasmon Resonance.\n\n\n \n\n\n\n\n\n\nThis page requires JavaScript to load _data/instruments.yml."
   },
   {
-    "objectID": "people.html",
-    "href": "people.html",
-    "title": "Our Team",
-    "section": "",
-    "text": "Principal Investigator\n\n\n\n\n\nTeam"
-  },
-  {
     "objectID": "publications.html",
     "href": "publications.html",
     "title": "Publications",
     "section": "",
-    "text": "Publications\nHere are our lab’s publications:\n\n\nFitzpatrick-Schmidt, T., Mansouri, A., Adamec, J., Klein, J., Coleman, L., Edwards, K. N., … Edwards, S. (2025). Proteomic analysis of chronic binge alcohol-induced hippocampal and anterior cingulate cortex neuroadaptations in simian immunodeficiency virus (SIV)-infected female rhesus macaques. Journal of Neuroimmune Pharmacology, 20(1), 16."
+    "text": "Publications\nHere are our lab’s publications:\n\n\nFitzpatrick-Schmidt, T., Mansouri, A., Adamec, J., Klein, J., Coleman, L., Edwards, K. N., … Edwards, S. (2025). Proteomic analysis of chronic binge alcohol-induced hippocampal and anterior cingulate cortex neuroadaptations in simian immunodeficiency virus (SIV)-infected female rhesus macaques. Journal of Neuroimmune Pharmacology, 20(1), 16. doi: 10.1007/s11481-025-10185-9\n\n\nHarris, N. R., Gallegos, E. M., Donovan, M., Mansouri, A., Paloczi, J., & Gardner, J. D. (2026). Concurrent chronic-plus-binge alcohol consumption and nicotine vaping alter the cardiac ventricular proteome in a preclinical mouse model. International Journal of Molecular Sciences, 27(4), 1625.\n\n\nMansouri, A., Hart, O., Aslanabadi, S., Hartupee, C., Yalcin, D., Sinha, G., et al.others. (2026). Comparative proteomic profiling of responses to standard systemic treatment regimens in pancreatic cancer. Cells, 15(6), 531.\n\n\nMansouri, A., Varukattu, N. B., Curole, B. J., Moaven, O., & Adamec, J. (2026). Mass spectrometry imaging tutorial: From cancer biomarker discovery to clinical applications. Analytica Chimica Acta, 1387, 344925. doi: https://doi.org/10.1016/j.aca.2025.344925"
   }
 ]
